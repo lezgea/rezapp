@@ -223,7 +223,7 @@ export const rezAuthenticate = async (email_address, password) => {
 
     const ret = {};
     if (res.status == 200) {
-        _storeToken(res.body);
+        await _storeToken(res.body);
         ret.user = res.body.user;
     } else if (res.status == 404) {
         ret.error = 'Email/password combination is incorrect.';
@@ -263,7 +263,7 @@ export const rezSelectAccountContext = async (account_id) => {
     const res = await _withRetry(() => _post('/SelectAccountContext', payload));
 
     if (res.status == 200) {
-        _storeToken(res.body);
+        await _storeToken(res.body);
         return true;
     }
     return null;
