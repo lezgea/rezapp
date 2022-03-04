@@ -11,12 +11,15 @@ export default function PortalScreen(props) {
         },
         {
             text: 'Request Handyman',
+            action: () => {},
         },
         {
             text: 'File a Complaint',
+            action: () => {},
         },
         {
             text: 'Make a Payment',
+            action: () => {},
         },
     ];
 
