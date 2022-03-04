@@ -32,7 +32,7 @@ export default function AnnouncementsScreen(props) {
         <View>
             <Spacer height={20} />
 
-            <Text style={styles.greeting}>
+            <Text style={styles.title}>
                 {Strings.announcements}
             </Text>
 
@@ -75,6 +75,9 @@ export default function AnnouncementsScreen(props) {
 }
 
 const styles = StyleSheet.create({
+    title: {
+        fontSize: 20,
+    },
     centeredView: {
         flex: 1,
         justifyContent: "center",

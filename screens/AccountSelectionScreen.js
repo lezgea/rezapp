@@ -35,7 +35,7 @@ export default function AccountSelectionScreen(props) {
         <View>
             <Spacer height={20} />
 
-            <Text style={styles.greeting}>
+            <Text style={styles.title}>
                 {Strings.greeting.replace('%s', props.user.first_name)}
             </Text>
 
@@ -62,7 +62,7 @@ export default function AccountSelectionScreen(props) {
 }
 
 const styles = StyleSheet.create({
-    greeting: {
+    title: {
         fontSize: 20,
-    }
+    },
 });

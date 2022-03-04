@@ -31,7 +31,7 @@ export default function PortalScreen(props) {
         <View style={styles.container}>
             <Spacer height={20} />
 
-            <Text style={styles.greeting}>
+            <Text style={styles.title}>
                 {props.account.name}
             </Text>
 
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
     },
-    greeting: {
+    title: {
         fontSize: 20,
     },
 });
