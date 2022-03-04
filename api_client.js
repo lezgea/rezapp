@@ -176,10 +176,10 @@ async function _delete(endpoint) {
 
 async function _storeToken(body) {
     accessToken = body.token;
-    refreshToken = body.refreshToken;
+    refreshToken = body.refreshToken || '';
     await Promise.all([
         AsyncStorage.setItem('accessToken', accessToken),
-        //AsyncStorage.setItem('refreshToken', refreshToken),
+        AsyncStorage.setItem('refreshToken', refreshToken),
     ]);
 };
 
@@ -194,8 +194,10 @@ async function _loadToken() {
 };
 
 async function _refreshToken() {
-    const payload = { refreshToken };
-    const res = await _post('/auth/refresh-token', payload);
+    const payload = {
+        refresh_token: refreshToken,
+    };
+    const res = await _post('/RefreshToken', payload);
     if (res.status == 200) {
         _storeToken(res.body);
         return true;
