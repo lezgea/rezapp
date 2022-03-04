@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Alert, StyleSheet, Text, Image, View, FlatList } from 'react-native';
-import { rezGetMemberships, rezSelectAccountContext } from '../api_client';
-import { ListItem, Input, Spacer, Button } from '../components';
-import { Colors, Images, Strings } from '../constants';
+import React from 'react';
+import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { ListItem, Spacer, Button } from '../components';
+import { Strings } from '../constants';
 
 export default function PortalScreen(props) {
     const actions = [
