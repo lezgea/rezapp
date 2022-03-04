@@ -15,4 +15,5 @@ export default Strings = {
     passwordPlaceholder: t('Password'),
     announcements: t('Announcements'),
     back: t('Back'),
+    postedOn: t('Posted on %s'),
 };

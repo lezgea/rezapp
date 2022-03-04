@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, FlatList, Modal } from 'react-native';
 import { rezGetAnnouncements } from '../api_client';
 import { ListItem, Spacer, Button } from '../components';
 import { Strings } from '../constants';
+import dayjs from 'dayjs';
 
 export default function AnnouncementsScreen(props) {
     const [announcements, setAnnouncements] = useState([]);
@@ -24,6 +25,8 @@ export default function AnnouncementsScreen(props) {
         };
         return (<ListItem styleName='secondary' text={ann.name} onPress={() => setSelectedAnnouncement(item)} />);
     };
+
+    const announcementDate = dayjs(selectedAnnouncement?.inserted_at).format('ddd, MM/DD/YYYY, hh:mm a');
 
     return (
         <View>
@@ -59,7 +62,9 @@ export default function AnnouncementsScreen(props) {
 
                         <Text style={styles.modalText}>{selectedAnnouncement?.description}</Text>
 
-                        {/* <Text style={styles.modalText}>{selectedAnnouncement?.inserted_at}</Text> */}
+                        <Text style={styles.modalText}>
+                            {Strings.postedOn.replace('%s', announcementDate)}
+                        </Text>
 
                         <Button text="OK" onPress={() => setSelectedAnnouncement(null)} />
                     </View>
