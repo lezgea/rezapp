@@ -270,3 +270,12 @@ export const rezSelectAccountContext = async (account_id) => {
     }
     return null;
 };
+
+export const rezGetAnnouncements = async () => {
+    const res = await _withRetry(() => _get('/GetAnnouncements'));
+
+    if (res.status == 200) {
+        return res.body.announcements;
+    }
+    return null;
+};

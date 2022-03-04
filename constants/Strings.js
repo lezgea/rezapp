@@ -13,4 +13,6 @@ export default Strings = {
     dontHaveAnAccount: t("Don't have an account?"),
     emailAddressPlaceholder: t('Email Address'),
     passwordPlaceholder: t('Password'),
+    announcements: t('Announcements'),
+    back: t('Back'),
 };

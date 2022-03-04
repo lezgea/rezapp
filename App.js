@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, SafeAreaView } from 'react-native';
-import {WelcomeScreen, AccountSelectionScreen, PortalScreen} from './screens';
+import {WelcomeScreen, AccountSelectionScreen, PortalScreen, AnnouncementsScreen} from './screens';
 import {Colors} from './constants';
 import { rezUnloadToken } from './api_client';
 
@@ -37,7 +37,9 @@ export default function App() {
 
             {screen=='accounts' && <AccountSelectionScreen user={user} onLogout={onLogout} onSelectAccount={onSelectAccount} />}
 
-            {screen=='portal' && <PortalScreen account={account} onGoBack={() => onSelectAccount(null)} />}
+            {screen=='portal' && <PortalScreen account={account} onSelectAction={setScreen} onGoBack={() => onSelectAccount(null)} />}
+
+            {screen=='announcements' && <AnnouncementsScreen onGoBack={() => setScreen('portal')} />}
         </SafeAreaView>
     );
 }

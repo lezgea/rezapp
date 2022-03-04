@@ -7,6 +7,7 @@ export default function PortalScreen(props) {
     const actions = [
         {
             text: 'View Announcements',
+            action: () => props.onSelectAction('announcements'),
         },
         {
             text: 'Request Handyman',
@@ -20,7 +21,7 @@ export default function PortalScreen(props) {
     ];
 
     const renderAction = ({item}) => {
-        return (<ListItem styleName='secondary' forwardIcon text={item.text} />);
+        return (<ListItem styleName='secondary' forwardIcon text={item.text} onPress={item.action} />);
     }
 
     return (
