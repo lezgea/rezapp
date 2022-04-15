@@ -38,12 +38,6 @@ export default function AnnouncementsScreen(props) {
 
             <Spacer height={20} />
 
-            {/* <Text>
-                {Strings.hereAreAllYourMemberships}
-            </Text> */}
-
-            <Spacer height={20} />
-
             <FlatList
                 data={announcements}
                 renderItem={renderAnnouncement}
