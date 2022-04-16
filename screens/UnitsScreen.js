@@ -108,10 +108,10 @@ export default function UnitsScreen(props) {
                         <Text style={styles.modalTitle}>{selectedUnit?.name}</Text>
 
                         <Text style={styles.modalBold}>{Strings.shareholders}</Text>
-                        <Text style={styles.modalText}>{selectedUnit?.shareholders?.split('; ').map(s => `- ${s}`).join('\n')}</Text>
+                        <Text style={styles.modalText}>{selectedUnit?.shareholders?.split('; ').map(s => `• ${s}`).join('\n')}</Text>
 
                         <Text style={styles.modalBold}>{Strings.tenants}</Text>
-                        <Text style={styles.modalText}>{selectedUnit?.tenants?.split('; ').map(s => `- ${s}`).join('\n')}</Text>
+                        <Text style={styles.modalText}>{selectedUnit?.tenants?.split('; ').map(s => `• ${s}`).join('\n')}</Text>
 
                         <Button text="OK" onPress={() => setSelectedUnitIndex(null)} />
                     </View>

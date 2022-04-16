@@ -75,10 +75,10 @@ export default function MembersScreen(props) {
                         <Text style={styles.modalTitle}>{selectedMember?.first_name} {selectedMember?.last_name}</Text>
 
                         <Text style={styles.modalBold}>{Strings.shareholderOf}</Text>
-                        <Text style={styles.modalText}>{selectedMember?.unit_assignments?.filter(ua => !!ua.is_shareholder).map(ua => `- ${ua.url_slug}`).join('\n')}</Text>
+                        <Text style={styles.modalText}>{selectedMember?.unit_assignments?.filter(ua => !!ua.is_shareholder).map(ua => `• ${ua.url_slug}`).join('\n')}</Text>
 
                         <Text style={styles.modalBold}>{Strings.tenantOf}</Text>
-                        <Text style={styles.modalText}>{selectedMember?.unit_assignments?.filter(ua => !!ua.is_tenant).map(ua => `- ${ua.url_slug}`).join('\n')}</Text>
+                        <Text style={styles.modalText}>{selectedMember?.unit_assignments?.filter(ua => !!ua.is_tenant).map(ua => `• ${ua.url_slug}`).join('\n')}</Text>
 
                         <Button text="OK" onPress={() => setSelectedMemberIndex(null)} />
                     </View>
