@@ -85,7 +85,6 @@ export default function UnitsScreen(props) {
                 data={buildings}
                 renderItem={renderBuildingTab}
                 keyExtractor={item => `${item.id}`}
-                style={styles.roundedList}
                 horizontal
             />
 
@@ -95,7 +94,6 @@ export default function UnitsScreen(props) {
                 data={selectedBuilding.directory || []}
                 renderItem={renderUnit}
                 keyExtractor={item => `${item.id}`}
-                style={styles.roundedList}
             />}
 
             <Button styleName='danger' backIcon text={Strings.back} onPress={props.onGoBack} />

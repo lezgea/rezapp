@@ -51,7 +51,6 @@ export default function AccountSelectionScreen(props) {
                 data={accounts}
                 renderItem={renderAccount}
                 keyExtractor={item => `${item.id}`}
-                style={styles.roundedList}
             />
 
             <Button styleName='danger' text={Strings.logoutButtonText} onPress={props.onLogout} />

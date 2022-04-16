@@ -42,7 +42,6 @@ export default function AnnouncementsScreen(props) {
                 data={announcements}
                 renderItem={renderAnnouncement}
                 keyExtractor={item => `${item.id}`}
-                style={styles.roundedList}
             />
 
             <Button styleName='danger' backIcon text={Strings.back} onPress={props.onGoBack} />

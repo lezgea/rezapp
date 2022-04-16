@@ -62,7 +62,6 @@ export default function MembersScreen(props) {
                 data={members}
                 renderItem={renderMember}
                 keyExtractor={item => `${item.id}`}
-                style={styles.roundedList}
             />
 
             <Button styleName='danger' backIcon text={Strings.back} onPress={props.onGoBack} />
