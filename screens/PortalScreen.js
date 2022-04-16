@@ -52,7 +52,7 @@ export default function PortalScreen(props) {
                 style={styles.list}
             />
 
-            <Button styleName='danger' backIcon text={Strings.selectAnotherAccountButtonText} onPress={props.onGoBack} />
+            <Button styleName='danger' backIcon text={Strings.back} onPress={props.onGoBack} />
 
             <Spacer height={20} />
         </View>
