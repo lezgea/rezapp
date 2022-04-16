@@ -48,7 +48,12 @@ export default function UnitsScreen(props) {
             id: item.id,
             name: item.name,
         };
-        return (<ListItem styleName='secondary' text={unit.name} onPress={() => setSelectedUnitIndex(index)} />);
+
+        const isVacant = (item.num_shareholders + item.num_tenants) == 0;
+        const badgeText = isVacant ? Strings.vacant : '';
+        const badgeStyle = isVacant ? 'warning' : '';
+
+        return (<ListItem styleName='secondary' text={unit.name} badgeText={badgeText} badgeStyle={badgeStyle} onPress={() => setSelectedUnitIndex(index)} />);
     };
 
     const getSelectedBuilding = () => {
@@ -103,7 +108,7 @@ export default function UnitsScreen(props) {
             <Modal animationType="fade" transparent={true} visible={!!selectedUnit}>
                 <View style={styles.centeredView}>
                     <View style={styles.modalView}>
-                        <Text style={styles.modalTitle}>{selectedUnit?.name}</Text>
+                        <Text style={styles.modalTitle}>{selectedUnit?.url_slug}</Text>
 
                         <Text style={styles.modalBold}>{Strings.shareholders}</Text>
                         <Text style={styles.modalText}>{selectedUnit?.shareholders?.split('; ').map(s => `• ${s}`).join('\n')}</Text>

@@ -26,6 +26,7 @@ export default Strings = {
     tenants: t('Tenants'),
     shareholderOf: t('Shareholder of'),
     tenantOf: t('Tenant of'),
+    vacant: t('Vacant'),
     back: t('Back'),
     postedOn: t('Posted on %s'),
 };
