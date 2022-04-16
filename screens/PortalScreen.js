@@ -6,27 +6,27 @@ import { Strings } from '../constants';
 export default function PortalScreen(props) {
     const actions = [
         {
-            text: 'View Announcements',
+            text: Strings.actionViewAnnouncements,
             action: () => props.onSelectAction('announcements'),
         },
         {
-            text: 'Request Handyman',
+            text: Strings.actionRequestHandyman,
             action: () => {},
         },
         {
-            text: 'File a Complaint',
+            text: Strings.actionFileComplaint,
             action: () => {},
         },
         {
-            text: 'Make a Payment',
+            text: Strings.actionMakePayment,
             action: () => {},
         },
         {
-            text: 'View Members',
+            text: Strings.actionViewMembers,
             action: () => props.onSelectAction('members'),
         },
         {
-            text: 'View Buildings and Units',
+            text: Strings.actionViewBuildingsAndUnits,
             action: () => props.onSelectAction('units'),
         },
     ];
