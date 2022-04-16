@@ -1,7 +1,7 @@
 import React from "react";
 import { TouchableOpacity, StyleSheet, Text } from "react-native";
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import {Colors, Sizes} from "../constants";
+import {Colors} from "../constants";
+import {Badge} from ".";
 
 const ListItem = (props) => {
     const styleName = props.styleName || 'primary';
@@ -11,18 +11,12 @@ const ListItem = (props) => {
 
     return (
         <TouchableOpacity style={[styles.button, buttonStyle]} {...props}>
-            <Ionicons
-                name={"arrow-back"}
-                size={Sizes.iconSize}
-                color={props.backIcon ? textStyle.color : 'transparent'}
-            />
             <Text style={[styles.text, textStyle]} numberOfLines={1}>
                 {props.text}
             </Text>
-            <Ionicons
-                name={"arrow-forward"}
-                size={Sizes.iconSize}
-                color={props.forwardIcon ? textStyle.color : 'transparent'}
+            <Badge
+                styleName={props.badgeStyle}
+                text={props.badgeText}
             />
         </TouchableOpacity>
     );
