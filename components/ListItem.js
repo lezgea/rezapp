@@ -65,7 +65,6 @@ const styles = StyleSheet.create({
 
     // text
     text: {
-        textAlign: "center",
         fontSize: 15,
         flex: 1,
     },
