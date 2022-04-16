@@ -37,7 +37,6 @@ const styles = StyleSheet.create({
         minWidth: 250,
         paddingHorizontal: 30,
         flexDirection: "row",
-        justifyContent: "space-between",
         alignItems: "center",
     },
     primaryButton: {
