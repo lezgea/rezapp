@@ -279,3 +279,66 @@ export const rezGetAnnouncements = async () => {
     }
     return null;
 };
+
+export const rezGetMembers = async () => {
+    const res = await _withRetry(() => _get('/GetMemberList'));
+
+    if (res.status == 200) {
+        return res.body.members;
+    }
+    return null;
+};
+
+export const rezGetMemberUnitAssignments = async (id) => {
+    const res = await _withRetry(() => _get(`/GetMemberUnitAssignments/${id}`));
+
+    if (res.status == 200) {
+        return res.body.unit_assignments;
+    }
+    return null;
+};
+
+export const rezGetBuildings = async () => {
+    const res = await _withRetry(() => _get('/GetBuildingList'));
+
+    if (res.status == 200) {
+        return res.body.buildings;
+    }
+    return null;
+};
+
+export const rezGetBuildingDirectory = async (slug) => {
+    const res = await _withRetry(() => _get(`/GetBuildingDirectory/${slug}`));
+
+    if (res.status == 200) {
+        return res.body.directory;
+    }
+    return null;
+}
+
+export const rezGetUnits = async () => {
+    const res = await _withRetry(() => _get('/GetUnits'));
+
+    if (res.status == 200) {
+        return res.body.buildings;
+    }
+    return null;
+};
+
+export const rezGetUnitDetails = async (slug) => {
+    const res = await _withRetry(() => _get(`/GetUnitDetails/${slug}`));
+
+    if (res.status == 200) {
+        return res.body.unit;
+    }
+    return null;
+};
+
+export const rezGetUnitMemberAssignments = async (slug) => {
+    const res = await _withRetry(() => _get(`/GetUnitMemberAssignments/${slug}`));
+
+    if (res.status == 200) {
+        return res.body.member_assignments;
+    }
+    return null;
+};

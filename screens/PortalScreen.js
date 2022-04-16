@@ -21,6 +21,14 @@ export default function PortalScreen(props) {
             text: 'Make a Payment',
             action: () => {},
         },
+        {
+            text: 'View Members',
+            action: () => props.onSelectAction('members'),
+        },
+        {
+            text: 'View Buildings and Units',
+            action: () => props.onSelectAction('units'),
+        },
     ];
 
     const renderAction = ({item}) => {
