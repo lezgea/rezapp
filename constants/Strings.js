@@ -16,6 +16,7 @@ export default Strings = {
     actionRequestHandyman: t('Request Handyman'),
     actionFileComplaint: t('File a Complaint'),
     actionMakePayment: t('Make a Payment'),
+    actionViewDocuments: t('View Documents and Forms'),
     actionViewMembers: t('View Members'),
     actionViewBuildingsAndUnits: t('View Buildings and Units'),
     passwordPlaceholder: t('Password'),

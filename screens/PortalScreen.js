@@ -22,6 +22,10 @@ export default function PortalScreen(props) {
             action: () => {},
         },
         {
+            text: Strings.actionViewDocuments,
+            action: () => {},
+        },
+        {
             text: Strings.actionViewMembers,
             action: () => props.onSelectAction('members'),
         },
