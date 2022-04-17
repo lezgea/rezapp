@@ -32,7 +32,6 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         flexDirection: "row",
         alignItems: "center",
-        marginBottom: -1,
     },
     primaryButton: {
         backgroundColor: Colors.blue,
