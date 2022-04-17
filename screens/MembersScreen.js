@@ -49,7 +49,7 @@ export default function MembersScreen(props) {
     const selectedMember = getSelectedMember();
 
     return (
-        <View>
+        <View style={styles.container}>
             <Spacer height={20} />
 
             <Text style={styles.title}>
@@ -88,6 +88,11 @@ export default function MembersScreen(props) {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignSelf: 'stretch',
+        paddingHorizontal: 20,
+    },
     title: {
         fontSize: 20,
     },

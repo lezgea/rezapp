@@ -29,7 +29,7 @@ export default function AnnouncementsScreen(props) {
     const announcementDate = dayjs(selectedAnnouncement?.inserted_at).format('ddd, MM/DD/YYYY, hh:mm a');
 
     return (
-        <View>
+        <View style={styles.container}>
             <Spacer height={20} />
 
             <Text style={styles.title}>
@@ -68,6 +68,11 @@ export default function AnnouncementsScreen(props) {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignSelf: 'stretch',
+        paddingHorizontal: 20,
+    },
     title: {
         fontSize: 20,
     },

@@ -66,6 +66,8 @@ export default function PortalScreen(props) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        alignSelf: 'stretch',
+        paddingHorizontal: 20,
     },
     title: {
         fontSize: 20,
