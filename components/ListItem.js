@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     button: {
         height: 55,
         minWidth: 250,
-        paddingHorizontal: 30,
+        paddingHorizontal: 20,
         flexDirection: "row",
         alignItems: "center",
         marginBottom: -1,
