@@ -79,7 +79,7 @@ export default function MembersScreen(props) {
                         <Text style={styles.modalBold}>{Strings.captionTenantOf}</Text>
                         <Text style={styles.modalText}>{selectedMember?.unit_assignments?.filter(ua => !!ua.is_tenant).map(ua => `• ${ua.url_slug}`).join('\n')}</Text>
 
-                        <Button text="OK" onPress={() => setSelectedMemberIndex(null)} />
+                        <Button text={Strings.buttonOK} onPress={() => setSelectedMemberIndex(null)} />
                     </View>
                 </View>
             </Modal>

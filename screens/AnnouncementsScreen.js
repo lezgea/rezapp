@@ -59,7 +59,7 @@ export default function AnnouncementsScreen(props) {
                             {Strings.captionPostedOn.replace('%s', announcementDate)}
                         </Text>
 
-                        <Button text="OK" onPress={() => setSelectedAnnouncement(null)} />
+                        <Button text={Strings.buttonOK} onPress={() => setSelectedAnnouncement(null)} />
                     </View>
                 </View>
             </Modal>

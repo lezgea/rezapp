@@ -12,6 +12,7 @@ export default Strings = {
     buttonLogOut: t('Log Out'),
     buttonBack: t('Back'),
     buttonRegister: t('Register'),
+    buttonOK: t('OK'),
     
     titleGreeting: t('Hello, %s!'),
     titleAnnouncements: t('Announcements'),

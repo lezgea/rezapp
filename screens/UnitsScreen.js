@@ -116,7 +116,7 @@ export default function UnitsScreen(props) {
                         <Text style={styles.modalBold}>{Strings.captionTenants}</Text>
                         <Text style={styles.modalText}>{selectedUnit?.tenants?.split('; ').map(s => `• ${s}`).join('\n')}</Text>
 
-                        <Button text="OK" onPress={() => setSelectedUnitIndex(null)} />
+                        <Button text={Strings.buttonOK} onPress={() => setSelectedUnitIndex(null)} />
                     </View>
                 </View>
             </Modal>
