@@ -3,7 +3,7 @@ import { Platform } from 'react-native';
 
 function _getApiBaseUrl(env) {
     if (env == 'local') {
-        return 'http://192.168.2.13:3010/v2';
+        return 'http://Emils-MacBook-Pro.local:3010/v2';
     }
     if (env == 'dev') {
         return 'https://api.rezidy.emilhus.com/v2';
