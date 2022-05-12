@@ -22,6 +22,7 @@ export default Strings = {
     passwordPlaceholder: t('Password'),
     announcements: t('Announcements'),
     members: t('Members'),
+    documentsAndForms: t('Documents and Forms'),
     buildingsAndUnits: t('Buildings and Units'),
     shareholders: t('Shareholders'),
     tenants: t('Tenants'),

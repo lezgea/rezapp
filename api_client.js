@@ -280,6 +280,15 @@ export const rezGetAnnouncements = async () => {
     return null;
 };
 
+export const rezGetDocuments = async () => {
+    const res = await _withRetry(() => _get('/GetDocuments'));
+
+    if (res.status == 200) {
+        return res.body.documents;
+    }
+    return null;
+};
+
 export const rezGetMembers = async () => {
     const res = await _withRetry(() => _get('/GetMemberList'));
 
