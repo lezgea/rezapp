@@ -50,7 +50,7 @@ export default function UnitsScreen(props) {
         };
 
         const isVacant = (item.num_shareholders + item.num_tenants) == 0;
-        const badgeText = isVacant ? Strings.vacant : '';
+        const badgeText = isVacant ? Strings.captionVacant : '';
         const badgeStyle = isVacant ? 'warning' : '';
 
         return (<ListItem styleName='secondary' text={unit.name} badgeText={badgeText} badgeStyle={badgeStyle} onPress={() => setSelectedUnitIndex(index)} />);
@@ -81,7 +81,7 @@ export default function UnitsScreen(props) {
             <Spacer height={20} />
 
             <Text style={styles.title}>
-                {Strings.buildingsAndUnits}
+                {Strings.titleBuildingsAndUnits}
             </Text>
 
             <Spacer height={20} />
@@ -101,7 +101,7 @@ export default function UnitsScreen(props) {
                 keyExtractor={item => `${item.id}`}
             />}
 
-            <Button styleName='danger' backIcon text={Strings.back} onPress={props.onGoBack} />
+            <Button styleName='danger' backIcon text={Strings.buttonBack} onPress={props.onGoBack} />
 
             <Spacer height={20} />
 
@@ -110,10 +110,10 @@ export default function UnitsScreen(props) {
                     <View style={styles.modalView}>
                         <Text style={styles.modalTitle}>{selectedUnit?.url_slug}</Text>
 
-                        <Text style={styles.modalBold}>{Strings.shareholders}</Text>
+                        <Text style={styles.modalBold}>{Strings.captionShareholders}</Text>
                         <Text style={styles.modalText}>{selectedUnit?.shareholders?.split('; ').map(s => `• ${s}`).join('\n')}</Text>
 
-                        <Text style={styles.modalBold}>{Strings.tenants}</Text>
+                        <Text style={styles.modalBold}>{Strings.captionTenants}</Text>
                         <Text style={styles.modalText}>{selectedUnit?.tenants?.split('; ').map(s => `• ${s}`).join('\n')}</Text>
 
                         <Button text="OK" onPress={() => setSelectedUnitIndex(null)} />

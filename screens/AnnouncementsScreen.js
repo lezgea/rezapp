@@ -33,7 +33,7 @@ export default function AnnouncementsScreen(props) {
             <Spacer height={20} />
 
             <Text style={styles.title}>
-                {Strings.announcements}
+                {Strings.titleAnnouncements}
             </Text>
 
             <Spacer height={20} />
@@ -44,7 +44,7 @@ export default function AnnouncementsScreen(props) {
                 keyExtractor={item => `${item.id}`}
             />
 
-            <Button styleName='danger' backIcon text={Strings.back} onPress={props.onGoBack} />
+            <Button styleName='danger' backIcon text={Strings.buttonBack} onPress={props.onGoBack} />
 
             <Spacer height={20} />
 
@@ -56,7 +56,7 @@ export default function AnnouncementsScreen(props) {
                         <Text style={styles.modalText}>{selectedAnnouncement?.description}</Text>
 
                         <Text style={styles.modalText}>
-                            {Strings.postedOn.replace('%s', announcementDate)}
+                            {Strings.captionPostedOn.replace('%s', announcementDate)}
                         </Text>
 
                         <Button text="OK" onPress={() => setSelectedAnnouncement(null)} />

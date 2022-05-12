@@ -36,13 +36,13 @@ export default function AccountSelectionScreen(props) {
             <Spacer height={20} />
 
             <Text style={styles.title}>
-                {Strings.greeting.replace('%s', props.user.first_name)}
+                {Strings.titleGreeting.replace('%s', props.user.first_name)}
             </Text>
 
             <Spacer height={20} />
 
             <Text>
-                {Strings.hereAreAllYourMemberships}
+                {Strings.captionHereAreAllYourMemberships}
             </Text>
 
             <Spacer height={20} />
@@ -53,7 +53,7 @@ export default function AccountSelectionScreen(props) {
                 keyExtractor={item => `${item.id}`}
             />
 
-            <Button styleName='danger' text={Strings.logoutButtonText} onPress={props.onLogout} />
+            <Button styleName='danger' text={Strings.buttonLogOut} onPress={props.onLogout} />
 
             <Spacer height={20} />
         </View>

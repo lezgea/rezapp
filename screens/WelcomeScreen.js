@@ -39,21 +39,21 @@ export default function WelcomeScreen(props) {
 
             <Spacer height={20} />
 
-            <Input placeholder={Strings.emailAddressPlaceholder} autoCapitalize='none' value={email} onChangeText={setEmail} />
+            <Input placeholder={Strings.placeholderEmailAddress} autoCapitalize='none' value={email} onChangeText={setEmail} />
 
             <Spacer height={20} />
 
-            <Input placeholder={Strings.passwordPlaceholder} autoCapitalize='none' secureTextEntry value={password} onChangeText={setPassword} />
+            <Input placeholder={Strings.placeholderPassword} autoCapitalize='none' secureTextEntry value={password} onChangeText={setPassword} />
 
             <Spacer height={20} />
 
-            <Button text={Strings.loginButtonText} onPress={onPressLogin} />
+            <Button text={Strings.buttonLogIn} onPress={onPressLogin} />
 
             <Spacer height={100} />
 
-            <Text style={styles.caption}>{Strings.dontHaveAnAccount}</Text>
+            <Text style={styles.caption}>{Strings.captionDontHaveAnAccount}</Text>
 
-            <Button text={Strings.registerButtonText} styleName='secondary' disabled={loading} />
+            <Button text={Strings.buttonRegister} styleName='secondary' disabled={loading} />
         </View>
     );
 }

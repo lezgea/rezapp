@@ -30,7 +30,7 @@ export default function DocumentsScreen(props) {
             <Spacer height={20} />
 
             <Text style={styles.title}>
-                {Strings.documentsAndForms}
+                {Strings.titleDocumentsAndForms}
             </Text>
 
             <Spacer height={20} />
@@ -41,7 +41,7 @@ export default function DocumentsScreen(props) {
                 keyExtractor={item => `${item.id}`}
             />
 
-            <Button styleName='danger' backIcon text={Strings.back} onPress={props.onGoBack} />
+            <Button styleName='danger' backIcon text={Strings.buttonBack} onPress={props.onGoBack} />
         </View>
     );
 }
