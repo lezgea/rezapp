@@ -10,7 +10,7 @@ function _getApiBaseUrl(env) {
     }
     return 'https://api.rezidy.com/v2';
 }
-const API_BASE_URL = _getApiBaseUrl('dev');
+const API_BASE_URL = _getApiBaseUrl('prod');
 
 function _getApiKey(platform) {
     if (platform == 'ios') {
