@@ -11,15 +11,15 @@ export default function PortalScreen(props) {
         },
         {
             text: Strings.actionRequestHandyman,
-            action: () => {},
+            //action: () => {},
         },
         {
             text: Strings.actionFileComplaint,
-            action: () => {},
+            ///action: () => {},
         },
         {
             text: Strings.actionMakePayment,
-            action: () => {},
+            //action: () => {},
         },
         {
             text: Strings.actionViewDocuments,
@@ -36,7 +36,8 @@ export default function PortalScreen(props) {
     ];
 
     const renderAction = ({item}) => {
-        return (<ListItem styleName='secondary' forwardIcon text={item.text} onPress={item.action} />);
+        const styleName = !!item.action ? 'secondary' : 'disabled';
+        return (<ListItem styleName={styleName} forwardIcon text={item.text} onPress={item.action} />);
     }
 
     return (
