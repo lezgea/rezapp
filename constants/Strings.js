@@ -31,8 +31,9 @@ export default Strings = {
 
     actionViewAnnouncements: t('View Announcements'),
     actionRequestHandyman: t('Request Handyman'),
-    actionFileComplaint: t('File a Complaint'),
+    actionFileComplaint: t('File a Complaint or Suggestion'),
     actionMakePayment: t('Make a Payment'),
+    actionDiscussWithCommunity: t('Discuss with Community'),
     actionViewDocuments: t('View Documents and Forms'),
     actionViewMembers: t('View Members'),
     actionViewBuildingsAndUnits: t('View Buildings and Units'),
