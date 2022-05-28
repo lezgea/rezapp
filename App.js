@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, SafeAreaView } from 'react-native';
-import {WelcomeScreen, AccountSelectionScreen, PortalScreen, AnnouncementsScreen, MembersScreen, UnitsScreen, DocumentsScreen} from './screens';
+import {WelcomeScreen, AccountSelectionScreen, PortalScreen, AnnouncementsScreen, MembersScreen, UnitsScreen, DocumentsScreen, CTAScreen} from './screens';
 import {Colors} from './constants';
 import { rezUnloadToken } from './api_client';
 
@@ -39,6 +39,10 @@ export default function App() {
 
             {screen=='portal' && <PortalScreen account={account} onSelectAction={setScreen} onGoBack={() => onSelectAccount(null)} />}
 
+            {screen=='cta-handyman' && <CTAScreen type='work_request' onGoBack={() => setScreen('portal')} />}
+
+            {screen=='cta-complaint' && <CTAScreen type='complaint' onGoBack={() => setScreen('portal')} />}
+            
             {screen=='announcements' && <AnnouncementsScreen onGoBack={() => setScreen('portal')} />}
 
             {screen=='documents' && <DocumentsScreen onGoBack={() => setScreen('portal')} />}

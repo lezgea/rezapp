@@ -11,11 +11,11 @@ export default function PortalScreen(props) {
         },
         {
             text: Strings.actionRequestHandyman,
-            //action: () => {},
+            action: () => props.onSelectAction('cta-handyman'),
         },
         {
             text: Strings.actionFileComplaint,
-            ///action: () => {},
+            action: () => props.onSelectAction('cta-complaint'),
         },
         {
             text: Strings.actionMakePayment,

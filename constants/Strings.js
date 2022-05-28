@@ -7,15 +7,22 @@ export default Strings = {
 
     placeholderEmailAddress: t('Email Address'),
     placeholderPassword: t('Password'),
+    placeholderDescribeProblem: t('Describe Your Problem'),
+    placeholderDescribeConcern: t('Describe Your Concern'),
     
     buttonLogIn: t('Log In'),
     buttonLogOut: t('Log Out'),
     buttonBack: t('Back'),
     buttonRegister: t('Register'),
     buttonOK: t('OK'),
+    buttonAddImageUsingCamera: t('Add Image Using Camera'),
+    buttonAddImageFromGallery: t('Add Image From Gallery'),
+    buttonSubmit: t('Submit'),
     
     titleGreeting: t('Hello, %s!'),
     titleAnnouncements: t('Announcements'),
+    titleHandymanRequestForm: t('Handyman Request Form'),
+    titleComplaintSuggestionForm: t('Complaint/Suggestion Form'),
     titleDocumentsAndForms: t('Documents and Forms'),
     titleMembers: t('Members'),
     titleBuildingsAndUnits: t('Buildings and Units'),
@@ -37,4 +44,10 @@ export default Strings = {
     actionViewDocuments: t('View Documents and Forms'),
     actionViewMembers: t('View Members'),
     actionViewBuildingsAndUnits: t('View Buildings and Units'),
+
+    errorNeedCameraPermission: t('Permission to access camera is required!'),
+    errorNeedGalleryPermission: t('Permission to access gallery is required!'),
+    errorNeedCTAInput: t('Please briefly describe your problem and/or add some images.'),
+
+    messageFormSubmissionSuccessful: t('Form submission successful!'),
 };
