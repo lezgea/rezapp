@@ -109,11 +109,7 @@ async function _fetch(url, options) {
             logLines.push(`Response Body: ${JSON.stringify(ret.body, null, 4)}`);
         }
     } catch (err) {
-        //logLines.push(`      Error while attempting to parse response body as JSON: `);
-        //logLines.push(err.message || err);
-        if (ret.is2xx || ret.is3xx) {
-            logLines.push(`Response Body (not JSON): ${ret.body}`);
-        }
+        logLines.push(`Response Body (not JSON): ${ret.body}`);
     }
 
     console.log(logLines.join("\n"));
@@ -348,6 +344,37 @@ export const rezGetUnitMemberAssignments = async (slug) => {
 
     if (res.status == 200) {
         return res.body.member_assignments;
+    }
+    return null;
+};
+
+export const rezUploadImageViaForm = async (uri) => {
+    const file = {
+        uri,
+        name: uri.substring(uri.lastIndexOf('/') + 1),
+        type: 'image/' + uri.substring(uri.lastIndexOf('.')), // TODO: tweak?
+    };
+
+    const fd = new FormData();
+    fd.append('file', file);
+
+    const res = await _withRetry(() => _postForm('/UploadFile', fd));
+    if (res.status == 200) {
+        return res.body;
+    }
+    return {
+        error: true,
+        code: res.status,
+    }
+};
+
+export const rezSaveCTA = async (cta) => {
+    const payload = {
+        ...cta,
+    };
+    const res = await _post('/SaveCTA', payload);
+    if (res.status == 200) {
+        return res.body;
     }
     return null;
 };
