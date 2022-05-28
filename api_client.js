@@ -100,10 +100,6 @@ async function _fetch(url, options) {
             ret.body = JSON.parse(ret.body);
         }
 
-        if (ret.is2xx && Array.isArray(ret.body)) {
-            logLines[logLines.length-1] += `; ${ret.body.length} element(s) in response body array`;
-        }
-
         const LOG_NON_ERROR_RESPONSES = false;
         if (ret.is4xx || ret.is5xx || LOG_NON_ERROR_RESPONSES) {
             logLines.push(`Response Body: ${JSON.stringify(ret.body, null, 4)}`);
