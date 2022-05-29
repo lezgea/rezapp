@@ -55,7 +55,7 @@ async function _withRetry(fn) {
 }
 
 async function _fetch(url, options) {
-    options.headers['authorization'] = `Bearer ${API_KEY}`;
+    options.headers['x-rezidy-client-token'] = API_KEY;
     const token = await _loadToken();
     if (token != null) {
         options.headers['x-rezidy-auth-token'] = token;
