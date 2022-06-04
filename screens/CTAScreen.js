@@ -71,7 +71,7 @@ export default function CTAScreen(props) {
             type: props.type,
             description: description,
             status: 'OPEN',
-            files: files.map(f => f.url),
+            file_keys: files.map(f => f.key),
         };
         const result = await rezSaveCTA(cta);
         if (result) {
