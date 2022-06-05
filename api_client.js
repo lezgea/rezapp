@@ -345,10 +345,11 @@ export const rezGetUnitMemberAssignments = async (slug) => {
 };
 
 export const rezUploadImageViaForm = async (uri) => {
+    const ext = uri.substring(uri.lastIndexOf('.') + 1);
     const file = {
         uri,
         name: uri.substring(uri.lastIndexOf('/') + 1),
-        type: 'image/' + uri.substring(uri.lastIndexOf('.') + 1), // TODO: tweak?
+        type: `image/${ext}`,
     };
 
     const fd = new FormData();
