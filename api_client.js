@@ -351,6 +351,9 @@ export const rezUploadImageViaForm = async (uri) => {
         name: uri.substring(uri.lastIndexOf('/') + 1),
         type: `image/${ext}`,
     };
+    if (file.type === 'image/jpg') {
+        file.type = 'image/jpeg';
+    }
 
     const fd = new FormData();
     fd.append('file', file);
