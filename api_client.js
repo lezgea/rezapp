@@ -74,7 +74,7 @@ async function _fetch(url, options) {
         }
 
         if (options.body instanceof FormData) {
-            logLines.push('Request Body: *FormData*');
+            logLines.push(`Request Body (FORM): ${JSON.stringify(logBody, null, 4)}`);
         } else {
             logLines.push(`Request Body: ${JSON.stringify(logBody, null, 4)}`);
             options.body = JSON.stringify(options.body);
