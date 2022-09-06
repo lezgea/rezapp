@@ -49,7 +49,7 @@ export default function UnitsScreen(props) {
             name: item.name,
         };
 
-        const isVacant = (item.num_shareholders + item.num_tenants) == 0;
+        const isVacant = (item.shareholders.length + item.tenants.length) === 0;
         const badgeText = isVacant ? Strings.captionVacant : '';
         const badgeStyle = isVacant ? 'warning' : '';
 
@@ -111,10 +111,10 @@ export default function UnitsScreen(props) {
                         <Text style={styles.modalTitle}>{selectedUnit?.url_slug}</Text>
 
                         <Text style={styles.modalBold}>{Strings.captionShareholders}</Text>
-                        <Text style={styles.modalText}>{selectedUnit?.shareholders?.split('; ').map(s => `• ${s}`).join('\n')}</Text>
+                        <Text style={styles.modalText}>{selectedUnit?.shareholders.map(s => `• ${s.full_name}`).join('\n')}</Text>
 
                         <Text style={styles.modalBold}>{Strings.captionTenants}</Text>
-                        <Text style={styles.modalText}>{selectedUnit?.tenants?.split('; ').map(s => `• ${s}`).join('\n')}</Text>
+                        <Text style={styles.modalText}>{selectedUnit?.tenants.map(s => `• ${s.full_name}`).join('\n')}</Text>
 
                         <Button text={Strings.buttonOK} onPress={() => setSelectedUnitIndex(null)} />
                     </View>

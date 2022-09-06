@@ -309,7 +309,7 @@ export const rezGetBuildings = async () => {
 };
 
 export const rezGetBuildingDirectory = async (slug) => {
-    const res = await _withRetry(() => _get(`/GetBuildingDirectory/${slug}`));
+    const res = await _withRetry(() => _get(`/GetBuildingDirectory_v2/${slug}`));
 
     if (res.status == 200) {
         return res.body.directory;
