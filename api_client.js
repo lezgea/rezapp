@@ -360,7 +360,7 @@ export const rezUploadImageViaForm = async (uri) => {
 
     const res = await _withRetry(() => _postForm('/UploadFile', fd));
     if (res.status == 200) {
-        return res.body;
+        return res.body.file;
     }
     return {
         error: true,
