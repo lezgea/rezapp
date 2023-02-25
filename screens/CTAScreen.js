@@ -25,9 +25,11 @@ export default function CTAScreen(props) {
             return;
         }
 
-        const image = await ImagePicker.launchCameraAsync({});
-        console.log(image);
-        if (image.cancelled) return;
+        const result = await ImagePicker.launchCameraAsync({});
+        console.log(result);
+        if (result.canceled) return;
+
+        const image = result.assets[0];
         setImages([...images, image]);
     };
 
@@ -38,9 +40,11 @@ export default function CTAScreen(props) {
             return;
         }
 
-        const image = await ImagePicker.launchImageLibraryAsync({});
-        console.log(image);
-        if (image.cancelled) return;
+        const result = await ImagePicker.launchImageLibraryAsync({});
+        console.log(result);
+        if (result.canceled) return;
+
+        const image = result.assets[0];
         setImages([...images, image]);
     };
 
