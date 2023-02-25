@@ -80,7 +80,19 @@ async function _fetch(url, options) {
             options.body = JSON.stringify(options.body);
         }
     }
-    const res = await fetch(url, options);
+
+    let res = null;
+    try {
+        res = await fetch(url, options);
+    } catch (err) {
+        res = {
+            url: url,
+            status: 1000,
+            headers: {map: {}},
+            text: () => err.message,
+        };
+    }
+    
     const ret = {
         is2xx: res.status>=200 && res.status<=299,
         is3xx: res.status>=300 && res.status<=399,
