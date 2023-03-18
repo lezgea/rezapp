@@ -1,6 +1,9 @@
 node_modules/
 .expo/
 npm-debug.*
+*.aab
+*.apk
+*.apks
 *.jks
 *.p8
 *.p12
