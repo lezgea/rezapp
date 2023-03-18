@@ -18,6 +18,9 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "production": {
+      "autoIncrement": true
+    },
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.rezidy.app"
