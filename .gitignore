@@ -4,6 +4,7 @@ npm-debug.*
 *.aab
 *.apk
 *.apks
+*.ipa
 *.jks
 *.p8
 *.p12
