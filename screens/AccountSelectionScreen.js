@@ -33,7 +33,7 @@ export default function AccountSelectionScreen(props) {
     };
 
     return (
-        <View>
+        <View style={styles.container}>
             <Spacer height={20} />
 
             <View style={{flexDirection:'row', justifyContent:'space-between'}}>
@@ -71,6 +71,11 @@ export default function AccountSelectionScreen(props) {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignSelf: 'stretch',
+        paddingHorizontal: 20,
+    },
     title: {
         fontSize: 20,
     },

@@ -95,5 +95,6 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: Colors.midGray,
         marginBottom: 5,
+        flex: 1,
     },
 });
