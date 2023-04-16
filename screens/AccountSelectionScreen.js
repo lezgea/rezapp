@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import { rezGetMemberships, rezSelectAccountContext } from '../api_client';
 import { ListItem, Spacer, Button } from '../components';
-import { Strings } from '../constants';
+import { Strings, Sizes, Colors } from '../constants';
 
 export default function AccountSelectionScreen(props) {
     const [accounts, setAccounts] = useState([]);
@@ -35,9 +36,18 @@ export default function AccountSelectionScreen(props) {
         <View>
             <Spacer height={20} />
 
-            <Text style={styles.title}>
-                {Strings.titleGreeting.replace('%s', props.user.first_name)}
-            </Text>
+            <View style={{flexDirection:'row', justifyContent:'space-between'}}>
+                <Text style={styles.title}>
+                    {Strings.titleGreeting.replace('%s', props.user.first_name)}
+                </Text>
+
+                <Ionicons
+                    name={"settings"}
+                    size={Sizes.iconSize}
+                    color={Colors.blue}
+                    onPress={props.onPressSettings}
+                />
+            </View>            
 
             <Spacer height={20} />
 

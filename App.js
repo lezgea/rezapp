@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, SafeAreaView } from 'react-native';
-import {WelcomeScreen, AccountSelectionScreen, PortalScreen, AnnouncementsScreen, MembersScreen, UnitsScreen, DocumentsScreen, CTAScreen, SignupScreen} from './screens';
+import {WelcomeScreen, AccountSelectionScreen, PortalScreen, AnnouncementsScreen, MembersScreen, UnitsScreen, DocumentsScreen, CTAScreen, SignupScreen, UserSettingsScreen} from './screens';
 import {Colors} from './constants';
 import { rezUnloadToken } from './api_client';
 
@@ -28,6 +28,7 @@ export default function App() {
         setUser(null);
         setScreen('welcome');
     };
+    const onDelete = onLogout;
 
     const onSelectAccount = (acc) => {
         if (acc) {
@@ -45,7 +46,9 @@ export default function App() {
 
             {screen=='signup' && <SignupScreen onSignup={onLogin} onPressLogin={onPressLogin} />}
 
-            {screen=='accounts' && <AccountSelectionScreen user={user} onLogout={onLogout} onSelectAccount={onSelectAccount} />}
+            {screen=='accounts' && <AccountSelectionScreen user={user} onLogout={onLogout} onSelectAccount={onSelectAccount} onPressSettings={() => setScreen('settings')} />}
+
+            {screen=='settings' && <UserSettingsScreen onGoBack={() => setScreen('accounts')} onPressDelete={onDelete} />}
 
             {screen=='portal' && <PortalScreen account={account} onSelectAction={setScreen} onGoBack={() => onSelectAccount(null)} />}
 

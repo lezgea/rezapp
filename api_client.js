@@ -242,6 +242,15 @@ export const rezSignup = async (user) => {
     return ret;
 }
 
+export const rezDeleteMyself = async () => {
+    const res = await _delete('/DeleteMyself');
+
+    if (res.status == 204) {
+        return true;
+    }
+    return false;
+}
+
 export const rezAuthenticate = async (email_address, password) => {
     const payload = {
         email_address,

@@ -12,11 +12,19 @@ export default Strings = {
     placeholderPassword: t('Password'),
     placeholderDescribeProblem: t('Describe Your Problem'),
     placeholderDescribeConcern: t('Describe Your Concern'),
+
+    labelFirstName: t('First Name:'),
+    labelLastName: t('Last Name:'),
+    labelEmailAddress: t('Email Address:'),
+    labelEmailAddressVerified: t('Email Address Verified?'),
+    labelPhoneNumber: t('Phone Number:'),
+    labelPhoneNumberVerified: t('Phone Number Verified?'),
     
     buttonLogIn: t('Log In'),
     buttonLogOut: t('Log Out'),
     buttonBack: t('Back'),
     buttonRegister: t('Sign Up'),
+    buttonDeleteMyProfile: t('Delete My Profile'),
     buttonOK: t('OK'),
     buttonAddImageUsingCamera: t('Add Image Using Camera'),
     buttonAddImageFromGallery: t('Add Image From Gallery'),
@@ -32,6 +40,7 @@ export default Strings = {
     
     captionDontHaveAnAccount: t('Don\'t have an account?'),
     captionHaveAnAccount: t('Have an account?'),
+    captionEditingUserInfoNotSupportedYet: t('Editing user info is not supported yet.\nIn the meantime, please contact\nsupport@rezidy.com for that.'),
     captionHereAreAllYourMemberships: t('Here are all of the accounts that you are a member of.\nSelect an account to proceed.'),
     captionPostedOn: t('Posted on %s'),
     captionShareholders: t('Shareholders'),
