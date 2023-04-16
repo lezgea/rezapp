@@ -19,6 +19,8 @@ export default Strings = {
     labelEmailAddressVerified: t('Email Address Verified?'),
     labelPhoneNumber: t('Phone Number:'),
     labelPhoneNumberVerified: t('Phone Number Verified?'),
+    labelYes: t('yes'),
+    labelNo: t('no'),
     
     buttonLogIn: t('Log In'),
     buttonLogOut: t('Log Out'),

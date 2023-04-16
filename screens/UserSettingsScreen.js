@@ -53,7 +53,7 @@ export default function UserSettingsScreen(props) {
 
             <View style={{flexDirection:'row', justifyContent:'space-between'}}>
                 <Text>{Strings.labelEmailAddressVerified}</Text>
-                <Text>{user?.email_address_verified?.toString()}</Text>
+                <Text>{user?.email_address_verified ? Strings.labelYes : Strings.labelNo}</Text>
             </View>
 
             <Spacer height={20} />
@@ -67,7 +67,7 @@ export default function UserSettingsScreen(props) {
 
             <View style={{flexDirection:'row', justifyContent:'space-between'}}>
                 <Text>{Strings.labelPhoneNumberVerified}</Text>
-                <Text>{user?.phone_number_verified?.toString()}</Text>
+                <Text>{user?.phone_number_verified ? Strings.labelYes : Strings.labelNo}</Text>
             </View>
 
             <Spacer height={100} />
