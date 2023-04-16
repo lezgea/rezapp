@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { rezDeleteMyself, rezGetUserDetails } from '../api_client';
-import { Button, Spacer } from '../components';
+import { Badge, Button, Spacer } from '../components';
 import { Colors, Strings } from '../constants';
 
 export default function UserSettingsScreen(props) {
@@ -51,9 +51,9 @@ export default function UserSettingsScreen(props) {
 
             <Spacer height={20} />
 
-            <View style={{flexDirection:'row', justifyContent:'space-between'}}>
+            <View style={{flexDirection:'row', justifyContent:'space-between', alignItems:'center'}}>
                 <Text>{Strings.labelEmailAddressVerified}</Text>
-                <Text>{user?.email_address_verified ? Strings.labelYes : Strings.labelNo}</Text>
+                <Badge styleName={user?.email_address_verified ? 'success' : 'warning'} text={user?.email_address_verified ? Strings.labelYes : Strings.labelNo} />
             </View>
 
             <Spacer height={20} />
@@ -65,9 +65,9 @@ export default function UserSettingsScreen(props) {
 
             <Spacer height={20} />
 
-            <View style={{flexDirection:'row', justifyContent:'space-between'}}>
+            <View style={{flexDirection:'row', justifyContent:'space-between', alignItems:'center'}}>
                 <Text>{Strings.labelPhoneNumberVerified}</Text>
-                <Text>{user?.phone_number_verified ? Strings.labelYes : Strings.labelNo}</Text>
+                <Badge styleName={user?.phone_number_verified ? 'success' : 'warning'} text={user?.phone_number_verified ? Strings.labelYes : Strings.labelNo} />
             </View>
 
             <Spacer height={100} />
