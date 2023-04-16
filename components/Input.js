@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: 13,
-        lineHeight: 20,
+        lineHeight: 15,
         color: Colors.textColor,
     },
     topText: {
