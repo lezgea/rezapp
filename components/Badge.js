@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.blue,
     },
     successButton: {
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.green,
     },
     warningButton: {
         backgroundColor: Colors.orange,
