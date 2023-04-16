@@ -5,6 +5,9 @@ const t = (text) => {
 export default Strings = {
     appName: t('Rezidy'),
 
+    placeholderFirstName: t('First Name'),
+    placeholderLastName: t('Last Name'),
+    placeholderPhoneNumber: t('Phone Number'),
     placeholderEmailAddress: t('Email Address'),
     placeholderPassword: t('Password'),
     placeholderDescribeProblem: t('Describe Your Problem'),
@@ -13,7 +16,7 @@ export default Strings = {
     buttonLogIn: t('Log In'),
     buttonLogOut: t('Log Out'),
     buttonBack: t('Back'),
-    buttonRegister: t('Register'),
+    buttonRegister: t('Sign Up'),
     buttonOK: t('OK'),
     buttonAddImageUsingCamera: t('Add Image Using Camera'),
     buttonAddImageFromGallery: t('Add Image From Gallery'),
@@ -28,6 +31,7 @@ export default Strings = {
     titleBuildingsAndUnits: t('Buildings and Units'),
     
     captionDontHaveAnAccount: t('Don\'t have an account?'),
+    captionHaveAnAccount: t('Have an account?'),
     captionHereAreAllYourMemberships: t('Here are all of the accounts that you are a member of.\nSelect an account to proceed.'),
     captionPostedOn: t('Posted on %s'),
     captionShareholders: t('Shareholders'),

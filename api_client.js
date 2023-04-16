@@ -220,6 +220,28 @@ export const rezUnloadToken = async () => {
     ]);
 };
 
+export const rezSignup = async (user) => {
+    const payload = {
+        first_name: user.firstName,
+        last_name: user.lastName,
+        phone_number: user.phone,
+        email_address: user.email,
+        password: user.password,
+    };
+    const res = await _post('/Signup', payload);
+
+    const ret = {};
+    if (res.status == 200) {
+        await _storeToken(res.body);
+        ret.user = res.body.user;
+    } else if (res.status == 412) {
+        ret.error = res.body;
+    } else {
+        ret.error = 'Server Error';
+    }
+    return ret;
+}
+
 export const rezAuthenticate = async (email_address, password) => {
     const payload = {
         email_address,

@@ -6,3 +6,4 @@ export {default as CTAScreen} from './CTAScreen';
 export {default as DocumentsScreen} from './DocumentsScreen';
 export {default as MembersScreen} from './MembersScreen';
 export {default as UnitsScreen} from './UnitsScreen';
+export {default as SignupScreen} from './SignupScreen';

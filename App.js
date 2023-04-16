@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, SafeAreaView } from 'react-native';
-import {WelcomeScreen, AccountSelectionScreen, PortalScreen, AnnouncementsScreen, MembersScreen, UnitsScreen, DocumentsScreen, CTAScreen} from './screens';
+import {WelcomeScreen, AccountSelectionScreen, PortalScreen, AnnouncementsScreen, MembersScreen, UnitsScreen, DocumentsScreen, CTAScreen, SignupScreen} from './screens';
 import {Colors} from './constants';
 import { rezUnloadToken } from './api_client';
 
@@ -8,6 +8,14 @@ export default function App() {
     const [screen, setScreen] = useState('welcome');
     const [user, setUser] = useState(null);
     const [account, setAccount] = useState(null);
+
+    const onPressSignup = () => {
+        setScreen('signup');
+    };
+
+    const onPressLogin = () => {
+        setScreen('welcome');
+    };
 
     const onLogin = (u) => {
         setUser(u);
@@ -33,7 +41,9 @@ export default function App() {
 
     return (
         <SafeAreaView style={styles.container}>
-            {screen=='welcome' && <WelcomeScreen onLogin={onLogin} />}
+            {screen=='welcome' && <WelcomeScreen onLogin={onLogin} onPressSignup={onPressSignup} />}
+
+            {screen=='signup' && <SignupScreen onSignup={onLogin} onPressLogin={onPressLogin} />}
 
             {screen=='accounts' && <AccountSelectionScreen user={user} onLogout={onLogout} onSelectAccount={onSelectAccount} />}
 

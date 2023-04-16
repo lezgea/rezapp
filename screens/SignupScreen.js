@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Alert, StyleSheet, Text, Image, View } from 'react-native';
-import { rezAuthenticate, rezGetUserDetails } from '../api_client';
+import { rezAuthenticate, rezGetUserDetails, rezSignup } from '../api_client';
 import { Button, Input, Spacer } from '../components';
 import { Colors, Images, Strings } from '../constants';
 
-export default function WelcomeScreen(props) {
-    const [loading, setLoading] = useState(false);
+export default function SignupScreen(props) {
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         async function fetchUserDetails() {
@@ -22,20 +25,39 @@ export default function WelcomeScreen(props) {
         fetchUserDetails();
     }, []);
 
-    const onPressLogin = async () => {
+    const onPressRegister = async () => {
         setLoading(true);
-        const ret = await rezAuthenticate(email, password);
+        const userData = {
+            firstName,
+            lastName,
+            phone,
+            email,
+            password,
+        };
+        const ret = await rezSignup(userData);
         setLoading(false);
         if (ret.error) {
             Alert.alert('Error', ret.error);
         } else {
-            props.onLogin(ret.user);
+            props.onSignup(ret.user);
         }
     };
 
     return (
         <View>
             <Image source={Images.logo} style={styles.logo} />
+
+            <Spacer height={20} />
+
+            <Input placeholder={Strings.placeholderFirstName} autoCapitalize='characters' value={firstName} onChangeText={setFirstName} />
+
+            <Spacer height={20} />
+
+            <Input placeholder={Strings.placeholderLastName} autoCapitalize='characters' value={lastName} onChangeText={setLastName} />
+
+            <Spacer height={20} />
+
+            <Input placeholder={Strings.placeholderPhoneNumber} keyboardType='phone-pad' value={phone} onChangeText={setPhone} />
 
             <Spacer height={20} />
 
@@ -47,21 +69,21 @@ export default function WelcomeScreen(props) {
 
             <Spacer height={20} />
 
-            <Button text={Strings.buttonLogIn} onPress={onPressLogin} />
+            <Button text={Strings.buttonRegister} onPress={onPressRegister} />
 
             <Spacer height={100} />
 
-            <Text style={styles.caption}>{Strings.captionDontHaveAnAccount}</Text>
+            <Text style={styles.caption}>{Strings.captionHaveAnAccount}</Text>
 
-            <Button text={Strings.buttonRegister} styleName='secondary' disabled={loading} onPress={props.onPressSignup} />
+            <Button text={Strings.buttonLogIn} styleName='secondary' disabled={loading} onPress={props.onPressLogin} />
         </View>
     );
 }
 
 const styles = StyleSheet.create({
     logo: {
-        width: 200,
-        height: 200,
+        width: 100,
+        height: 100,
         alignSelf: 'center',
         borderRadius: 12,
     },
