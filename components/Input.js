@@ -4,7 +4,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import {Colors, Sizes} from "../constants";
 
 const Input = (props) => {
-    const [open, setOpen] = useState(!props.password);
+    const [open, setOpen] = useState(!props.secureTextEntry);
     const [focused, setFocused] = useState(false);
     const [showSuggs, setShowSuggs] = useState(false);
 
@@ -37,13 +37,13 @@ const Input = (props) => {
                 <View style={styles.input}>
                     <TextInput
                         style={props.value.length===0 ? styles.placeholder : styles.text}
-                        secureTextEntry={!open}
                         onFocus={() => setFocusState(true)}
                         onBlur={() => setFocusState(false)}
                         {...props}
+                        secureTextEntry={!open} // This has to go AFTER the {...props} so that password hiding works correctly.
                     />
                 </View>
-                {props.password && (
+                {props.secureTextEntry && (
                     <Ionicons
                         name={open ? "ios-eye-off" : "ios-eye"}
                         size={Sizes.iconSize}
