@@ -61,7 +61,7 @@ export default function PortalScreen(props) {
                 style={styles.list}
             />
 
-            <Button styleName='danger' backIcon text={Strings.buttonBack} onPress={props.onGoBack} />
+            <Button color='red' secondary backIcon text={Strings.buttonBack} onPress={props.onGoBack} />
 
             <Spacer height={20} />
         </View>

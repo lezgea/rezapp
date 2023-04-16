@@ -75,7 +75,7 @@ export default function SignupScreen(props) {
 
             <Text style={styles.caption}>{Strings.captionHaveAnAccount}</Text>
 
-            <Button text={Strings.buttonLogIn} styleName='secondary' disabled={loading} onPress={props.onPressLogin} />
+            <Button text={Strings.buttonLogIn} secondary disabled={loading} onPress={props.onPressLogin} />
         </View>
     );
 }

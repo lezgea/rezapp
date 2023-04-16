@@ -53,7 +53,7 @@ export default function WelcomeScreen(props) {
 
             <Text style={styles.caption}>{Strings.captionDontHaveAnAccount}</Text>
 
-            <Button text={Strings.buttonRegister} styleName='secondary' disabled={loading} onPress={props.onPressSignup} />
+            <Button text={Strings.buttonRegister} secondary disabled={loading} onPress={props.onPressSignup} />
         </View>
     );
 }

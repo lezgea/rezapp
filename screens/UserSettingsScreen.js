@@ -76,11 +76,11 @@ export default function UserSettingsScreen(props) {
 
             <Spacer height={100} />
 
-            <Button styleName='danger' text={Strings.buttonDeleteMyProfile} onPress={onPressDelete} />
+            <Button color='red' text={Strings.buttonDeleteMyProfile} onPress={onPressDelete} />
 
             <Spacer height={20} />
 
-            <Button styleName='danger' backIcon text={Strings.buttonBack} onPress={props.onGoBack} />
+            <Button color='red' secondary backIcon text={Strings.buttonBack} onPress={props.onGoBack} />
         </View>
     );
 }

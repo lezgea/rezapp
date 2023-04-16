@@ -4,25 +4,24 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import {Colors, Sizes} from "../constants";
 
 const Button = (props) => {
-    const styleName = props.styleName || 'primary';
-    const stylePrefix = props.disabled ? 'disabled' : styleName;
-    const buttonStyle = styles[stylePrefix+'Button'];
-    const textStyle = styles[stylePrefix+'Text'] || {};
+    const color = props.disabled ? 'disabled' : (props.color || 'blue');
+    const prisec = props.secondary ? 'Secondary' : 'Primary';
+    const buttonStyle = styles[color+prisec+'Button'];
 
     return (
         <TouchableOpacity style={[styles.button, buttonStyle]} {...props}>
             <Ionicons
                 name={"arrow-back"}
                 size={Sizes.iconSize}
-                color={props.backIcon ? textStyle.color : 'transparent'}
+                color={props.backIcon ? buttonStyle.color : 'transparent'}
             />
-            <Text style={[styles.text, textStyle]}>
+            <Text style={[styles.text, {color:buttonStyle.color}]}>
                 {props.text}
             </Text>
             <Ionicons
                 name={"arrow-forward"}
                 size={Sizes.iconSize}
-                color={props.forwardIcon ? textStyle.color : 'transparent'}
+                color={props.forwardIcon ? buttonStyle.color : 'transparent'}
             />
         </TouchableOpacity>
     );
@@ -41,27 +40,52 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         alignItems: "center",
     },
-    primaryButton: {
+
+    bluePrimaryButton: {
         backgroundColor: Colors.blue,
+        color: Colors.white,
     },
-    secondaryButton: {
+    greenPrimaryButton: {
+        backgroundColor: Colors.green,
+        color: Colors.white,
+    },
+    orangePrimaryButton: {
+        backgroundColor: Colors.orange,
+        color: Colors.white,
+    },
+    redPrimaryButton: {
+        backgroundColor: Colors.red,
+        color: Colors.white,
+    },
+    disabledPrimaryButton: {
+        backgroundColor: Colors.lightGray,
+        color: Colors.white,
+    },
+
+    blueSecondaryButton: {
         borderColor: Colors.blue,
         borderWidth: 1,
+        color: Colors.blue,
     },
-    successButton: {
+    greenSecondaryButton: {
         borderColor: Colors.green,
         borderWidth: 1,
+        color: Colors.green,
     },
-    warningButton: {
+    orangeSecondaryButton: {
         borderColor: Colors.orange,
         borderWidth: 1,
+        color: Colors.orange,
     },
-    dangerButton: {
+    redSecondaryButton: {
         borderColor: Colors.red,
         borderWidth: 1,
+        color: Colors.red,
     },
-    disabledButton: {
-        backgroundColor: Colors.lightGray,
+    disabledSecondaryButton: {
+        borderColor: Colors.lightGray,
+        borderWidth: 1,
+        color: Colors.lightGray,
     },
 
     // text
@@ -69,23 +93,5 @@ const styles = StyleSheet.create({
         textAlign: "center",
         fontSize: 15,
         flex: 1,
-    },
-    primaryText: {
-        color: Colors.white,
-    },
-    secondaryText: {
-        color: Colors.blue,
-    },
-    successText: {
-        color: Colors.green,
-    },
-    warningText: {
-        color: Colors.orange,
-    },
-    dangerText: {
-        color: Colors.red,
-    },
-    disabledText: {
-        color: Colors.midGray,
     },
 });

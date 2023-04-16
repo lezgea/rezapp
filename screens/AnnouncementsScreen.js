@@ -44,7 +44,7 @@ export default function AnnouncementsScreen(props) {
                 keyExtractor={item => `${item.id}`}
             />
 
-            <Button styleName='danger' backIcon text={Strings.buttonBack} onPress={props.onGoBack} />
+            <Button color='red' secondary backIcon text={Strings.buttonBack} onPress={props.onGoBack} />
 
             <Spacer height={20} />
 

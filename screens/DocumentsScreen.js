@@ -41,7 +41,7 @@ export default function DocumentsScreen(props) {
                 keyExtractor={item => `${item.id}`}
             />
 
-            <Button styleName='danger' backIcon text={Strings.buttonBack} onPress={props.onGoBack} />
+            <Button color='red' secondary backIcon text={Strings.buttonBack} onPress={props.onGoBack} />
         </View>
     );
 }

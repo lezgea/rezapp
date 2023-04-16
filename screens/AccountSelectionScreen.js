@@ -63,7 +63,7 @@ export default function AccountSelectionScreen(props) {
                 keyExtractor={item => `${item.id}`}
             />
 
-            <Button styleName='danger' text={Strings.buttonLogOut} onPress={props.onLogout} />
+            <Button color='red' secondary text={Strings.buttonLogOut} onPress={props.onLogout} />
 
             <Spacer height={20} />
         </View>

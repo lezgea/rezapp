@@ -106,11 +106,11 @@ export default function CTAScreen(props) {
 
                 <Spacer height={20} />
 
-                <Button styleName='secondary' text={Strings.buttonAddImageUsingCamera} onPress={onLaunchCamera} />
+                <Button secondary text={Strings.buttonAddImageUsingCamera} onPress={onLaunchCamera} />
 
                 <Spacer height={20} />
 
-                <Button styleName='secondary' text={Strings.buttonAddImageFromGallery} onPress={onOpenPhotos} />
+                <Button secondary text={Strings.buttonAddImageFromGallery} onPress={onOpenPhotos} />
 
                 {images.length>0 && <Spacer height={20} />}
 
@@ -128,7 +128,7 @@ export default function CTAScreen(props) {
                 <Button styleName='primary' text={Strings.buttonSubmit} onPress={onSubmit} />
             </View>
 
-            <Button styleName='danger' backIcon text={Strings.buttonBack} onPress={props.onGoBack} />
+            <Button color='red' secondary backIcon text={Strings.buttonBack} onPress={props.onGoBack} />
 
             <Spacer height={20} />
 
