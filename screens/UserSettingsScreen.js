@@ -23,7 +23,11 @@ export default function UserSettingsScreen(props) {
         setLoading(true);
         const ret = await rezDeleteMyself();
         setLoading(false);
-        props.onPressDelete();
+        if (ret.error) {
+            alert(ret.error);
+        } else {
+            props.onPressDelete();
+        }
     };
 
     return (
