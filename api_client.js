@@ -1,5 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Platform } from 'react-native';
+import { expo } from './app.json';
 
 function _getApiBaseUrl(env) {
     if (env == 'local') {
@@ -55,6 +56,8 @@ async function _withRetry(fn) {
 }
 
 async function _fetch(url, options) {
+    options.headers['x-rezidy-app-platform'] = Platform.OS;
+    options.headers['x-rezidy-app-version'] = expo.version;
     options.headers['x-rezidy-client-token'] = API_KEY;
     const token = await _loadToken();
     if (token != null) {
