@@ -39,6 +39,7 @@ export default Strings = {
     titleDocumentsAndForms: t('Documents and Forms'),
     titleMembers: t('Members'),
     titleBuildingsAndUnits: t('Buildings and Units'),
+    titleInvoices: t('Invoices'),
 
     captionDontHaveAnAccount: t('Don\'t have an account?'),
     captionHaveAnAccount: t('Have an account?'),
@@ -50,6 +51,14 @@ export default Strings = {
     captionShareholderOf: t('Shareholder of'),
     captionTenantOf: t('Tenant of'),
     captionVacant: t('Vacant'),
+    captionInvoiceDue: t('Due'),
+    captionInvoicePaidInFull: t('Paid in Full'),
+    captionInvoiceSummary: t('Summary'),
+    captionInvoiceAmountCharged: t('Amount Charged:'),
+    captionInvoiceAmountPaid: t('Amount Paid:'),
+    captionInvoiceAmountDue: t('Amount Due:'),
+    captionInvoiceURL: t('URL:'),
+    captionInvoiceLineItems: t('Line Items'),
 
     actionViewAnnouncements: t('View Announcements'),
     actionRequestHandyman: t('Request Handyman'),

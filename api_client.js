@@ -330,6 +330,15 @@ export const rezGetDocuments = async () => {
     return null;
 };
 
+export const rezGetMyInvoices = async () => {
+    const res = await _withRetry(() => _get('/GetMyInvoices'));
+
+    if (res.status == 200) {
+        return res.body.invoices;
+    }
+    return null;
+};
+
 export const rezGetMembers = async () => {
     const res = await _withRetry(() => _get('/GetMemberList'));
 

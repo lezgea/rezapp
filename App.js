@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, SafeAreaView } from 'react-native';
-import {WelcomeScreen, AccountSelectionScreen, PortalScreen, AnnouncementsScreen, MembersScreen, UnitsScreen, DocumentsScreen, CTAScreen, SignupScreen, UserSettingsScreen} from './screens';
+import {WelcomeScreen, AccountSelectionScreen, PortalScreen, AnnouncementsScreen, MembersScreen, UnitsScreen, DocumentsScreen, CTAScreen, SignupScreen, UserSettingsScreen, InvoicesScreen} from './screens';
 import {Colors} from './constants';
 import { rezUnloadToken } from './api_client';
 
@@ -59,6 +59,8 @@ export default function App() {
             {screen=='announcements' && <AnnouncementsScreen onGoBack={() => setScreen('portal')} />}
 
             {screen=='documents' && <DocumentsScreen onGoBack={() => setScreen('portal')} />}
+
+            {screen=='invoices' && <InvoicesScreen onGoBack={() => setScreen('portal')} />}
 
             {screen=='members' && <MembersScreen onGoBack={() => setScreen('portal')} />}
 

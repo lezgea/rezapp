@@ -19,7 +19,7 @@ export default function PortalScreen(props) {
         },
         {
             text: Strings.actionViewOrPayInvoices,
-            //action: () => {},
+            action: () => props.onSelectAction('invoices'),
         },
         {
             text: Strings.actionDiscussWithCommunity,
