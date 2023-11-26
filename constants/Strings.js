@@ -21,7 +21,7 @@ export default Strings = {
     labelPhoneNumberVerified: t('Phone Number Verified?'),
     labelYes: t('Yes'),
     labelNo: t('No'),
-    
+
     buttonLogIn: t('Log In'),
     buttonLogOut: t('Log Out'),
     buttonBack: t('Back'),
@@ -31,7 +31,7 @@ export default Strings = {
     buttonAddImageUsingCamera: t('Add Image Using Camera'),
     buttonAddImageFromGallery: t('Add Image From Gallery'),
     buttonSubmit: t('Submit'),
-    
+
     titleGreeting: t('Hello, %s!'),
     titleAnnouncements: t('Announcements'),
     titleHandymanRequestForm: t('Handyman Request Form'),
@@ -39,7 +39,7 @@ export default Strings = {
     titleDocumentsAndForms: t('Documents and Forms'),
     titleMembers: t('Members'),
     titleBuildingsAndUnits: t('Buildings and Units'),
-    
+
     captionDontHaveAnAccount: t('Don\'t have an account?'),
     captionHaveAnAccount: t('Have an account?'),
     captionEditingUserInfoNotSupportedYet: t('Editing user info is not supported yet.\nIn the meantime, please contact\nsupport@rezidy.com for that.'),
