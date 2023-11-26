@@ -18,7 +18,7 @@ export default function PortalScreen(props) {
             action: () => props.onSelectAction('cta-complaint'),
         },
         {
-            text: Strings.actionMakePayment,
+            text: Strings.actionViewOrPayInvoices,
             //action: () => {},
         },
         {

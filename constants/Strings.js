@@ -55,6 +55,7 @@ export default Strings = {
     actionRequestHandyman: t('Request Handyman'),
     actionFileComplaint: t('File a Complaint or Suggestion'),
     actionMakePayment: t('Make a Payment'),
+    actionViewOrPayInvoices: t('View or Pay Invoices'),
     actionDiscussWithCommunity: t('Discuss with Community'),
     actionViewDocuments: t('View Documents and Forms'),
     actionViewMembers: t('View Members'),
