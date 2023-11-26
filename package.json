@@ -9,18 +9,18 @@
     "eject": "expo eject"
   },
   "dependencies": {
-    "@react-native-async-storage/async-storage": "1.17.11",
-    "dayjs": "^1.10.8",
-    "expo": "^48.0.4",
-    "expo-image-picker": "~14.1.1",
-    "expo-status-bar": "~1.4.4",
-    "expo-updates": "~0.16.3",
+    "@react-native-async-storage/async-storage": "1.18.2",
+    "dayjs": "^1.11.10",
+    "expo": "^49.0.21",
+    "expo-image-picker": "~14.3.2",
+    "expo-status-bar": "~1.6.0",
+    "expo-updates": "^0.18.17",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-native": "0.71.3",
-    "react-native-toast-message": "^2.1.5",
+    "react-native": "0.72.6",
+    "react-native-toast-message": "^2.1.7",
     "react-native-vector-icons": "^8.1.0",
-    "react-native-web": "~0.18.10"
+    "react-native-web": "~0.19.6"
   },
   "devDependencies": {
     "@babel/core": "^7.21.3"
