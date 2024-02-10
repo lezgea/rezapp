@@ -27,6 +27,7 @@ export default Strings = {
     buttonBack: t('Back'),
     buttonRegister: t('Sign Up'),
     buttonDeleteMyProfile: t('Delete My Profile'),
+    buttonContactSupport: t('E-mail Support'),
     buttonOK: t('OK'),
     buttonAddImageUsingCamera: t('Add Image Using Camera'),
     buttonAddImageFromGallery: t('Add Image From Gallery'),
@@ -43,7 +44,7 @@ export default Strings = {
 
     captionDontHaveAnAccount: t('Don\'t have an account?'),
     captionHaveAnAccount: t('Have an account?'),
-    captionEditingUserInfoNotSupportedYet: t('Editing user info is not supported yet.\nIn the meantime, please contact\nsupport@rezidy.com for that.'),
+    captionEditingUserInfoNotSupportedYet: t('Editing user info is not supported yet.\nIn the meantime, please contact support for that.'),
     captionHereAreAllYourMemberships: t('Here are all of the accounts that you are a member of.\nSelect an account to proceed.'),
     captionPostedOn: t('Posted on %s'),
     captionShareholders: t('Shareholders'),

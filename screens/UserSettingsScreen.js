@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Linking, StyleSheet, Text, View } from 'react-native';
 import { rezDeleteMyself, rezGetUserDetails } from '../api_client';
 import { Badge, Button, Spacer } from '../components';
 import { Colors, Strings } from '../constants';
@@ -28,6 +28,10 @@ export default function UserSettingsScreen(props) {
         } else {
             props.onPressDelete();
         }
+    };
+
+    const onPressContact = async () => {
+        await Linking.openURL('mailto:support@rezidy.com')
     };
 
     return (
@@ -79,6 +83,10 @@ export default function UserSettingsScreen(props) {
             <Text style={styles.caption}>{Strings.captionEditingUserInfoNotSupportedYet}</Text>
 
             <Spacer height={100} />
+
+            <Button color='blue' text={Strings.buttonContactSupport} onPress={onPressContact} />
+
+            <Spacer height={20} />
 
             <Button color='red' text={Strings.buttonDeleteMyProfile} onPress={onPressDelete} />
 
