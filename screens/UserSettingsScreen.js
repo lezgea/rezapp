@@ -3,6 +3,7 @@ import { Linking, StyleSheet, Text, View } from 'react-native';
 import { rezDeleteMyself, rezGetUserDetails } from '../api_client';
 import { Badge, Button, Spacer } from '../components';
 import { Colors, Strings } from '../constants';
+import { getAppVersion } from '../utils';
 
 export default function UserSettingsScreen(props) {
     const [user, setUser] = useState(null);
@@ -33,6 +34,8 @@ export default function UserSettingsScreen(props) {
     const onPressContact = async () => {
         await Linking.openURL('mailto:support@rezidy.com')
     };
+
+    const versionString = Strings.captionAppVersion.replace('%s', getAppVersion())
 
     return (
         <View style={styles.container}>
@@ -93,6 +96,10 @@ export default function UserSettingsScreen(props) {
             <Spacer height={20} />
 
             <Button color='red' secondary backIcon text={Strings.buttonBack} onPress={props.onGoBack} />
+
+            <Spacer height={20} />
+
+            <Text style={styles.version}>{versionString}</Text>
         </View>
     );
 }
@@ -108,5 +115,10 @@ const styles = StyleSheet.create({
         color: Colors.midGray,
         marginBottom: 5,
         flex: 1,
+    },
+    version: {
+        textAlign: 'center',
+        color: Colors.midGray,
+        marginBottom: 5,
     },
 });

@@ -45,6 +45,7 @@ export default Strings = {
     captionDontHaveAnAccount: t('Don\'t have an account?'),
     captionHaveAnAccount: t('Have an account?'),
     captionEditingUserInfoNotSupportedYet: t('Editing user info is not supported yet.\nIn the meantime, please contact support for that.'),
+    captionAppVersion: t('App version %s'),
     captionHereAreAllYourMemberships: t('Here are all of the accounts that you are a member of.\nSelect an account to proceed.'),
     captionPostedOn: t('Posted on %s'),
     captionShareholders: t('Shareholders'),
