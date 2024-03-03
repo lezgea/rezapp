@@ -45,7 +45,7 @@ const Input = (props) => {
                 </View>
                 {props.secureTextEntry && (
                     <Ionicons
-                        name={open ? "ios-eye-off" : "ios-eye"}
+                        name={open ? "eye-off" : "eye"}
                         size={Sizes.iconSize}
                         color="#B8B8B8"
                         onPress={() => setOpen(!open)}
