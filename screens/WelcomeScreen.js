@@ -34,7 +34,7 @@ export default function WelcomeScreen(props) {
     };
 
     return (
-        <View>
+        <View style={styles.container}>
             <Image source={Images.logo} style={styles.logo} />
 
             <Spacer height={20} />
@@ -59,6 +59,10 @@ export default function WelcomeScreen(props) {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        alignSelf: 'stretch',
+        paddingHorizontal: 60,
+    },
     logo: {
         width: 200,
         height: 200,

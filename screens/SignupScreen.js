@@ -44,7 +44,7 @@ export default function SignupScreen(props) {
     };
 
     return (
-        <View>
+        <View style={styles.container}>
             <Image source={Images.logo} style={styles.logo} />
 
             <Spacer height={20} />
@@ -81,6 +81,10 @@ export default function SignupScreen(props) {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        alignSelf: 'stretch',
+        paddingHorizontal: 60,
+    },
     logo: {
         width: 100,
         height: 100,
