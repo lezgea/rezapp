@@ -9,11 +9,11 @@ import { rezSaveCTA, rezUploadImageViaForm } from '../api_client';
 export default function CTAScreen(props) {
     const ctaType = props.type;
     const title = ctaType=='work_request'
-            ? Strings.titleHandymanRequestForm
-            : Strings.titleComplaintSuggestionForm;
+            ? Strings.titleHandymanRequestForm()
+            : Strings.titleComplaintSuggestionForm();
     const placeholder = ctaType=='work_request'
-            ? Strings.placeholderDescribeProblem
-            : Strings.placeholderDescribeConcern;
+            ? Strings.placeholderDescribeProblem()
+            : Strings.placeholderDescribeConcern();
 
     const [description, setDescription] = useState('');
     const [images, setImages] = useState([]);
@@ -21,7 +21,7 @@ export default function CTAScreen(props) {
     const onLaunchCamera = async () => {
         const permissionResult = await ImagePicker.requestCameraPermissionsAsync();
         if (!permissionResult.granted) {
-            alert(Strings.errorNeedCameraPermission);
+            alert(Strings.errorNeedCameraPermission());
             return;
         }
 
@@ -36,7 +36,7 @@ export default function CTAScreen(props) {
     const onOpenPhotos = async () => {
         const permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
         if (!permissionResult.granted) {
-            alert(Strings.errorNeedGalleryPermission);
+            alert(Strings.errorNeedGalleryPermission());
             return;
         }
 
@@ -64,7 +64,7 @@ export default function CTAScreen(props) {
 
     const onSubmit = async () => {
         if (description.trim().length===0 && images.length===0) {
-            alert(Strings.errorNeedCTAInput);
+            alert(Strings.errorNeedCTAInput());
             return;
         }
 
@@ -81,7 +81,7 @@ export default function CTAScreen(props) {
         if (result) {
             Toast.show({
                 type: 'info',
-                text1: Strings.messageFormSubmissionSuccessful,
+                text1: Strings.messageFormSubmissionSuccessful(),
                 visibilityTime: 1500,
                 onHide: props.onGoBack, 
             });
@@ -106,11 +106,11 @@ export default function CTAScreen(props) {
 
                 <Spacer height={20} />
 
-                <Button secondary text={Strings.buttonAddImageUsingCamera} onPress={onLaunchCamera} />
+                <Button secondary text={Strings.buttonAddImageUsingCamera()} onPress={onLaunchCamera} />
 
                 <Spacer height={20} />
 
-                <Button secondary text={Strings.buttonAddImageFromGallery} onPress={onOpenPhotos} />
+                <Button secondary text={Strings.buttonAddImageFromGallery()} onPress={onOpenPhotos} />
 
                 {images.length>0 && <Spacer height={20} />}
 
@@ -125,10 +125,10 @@ export default function CTAScreen(props) {
 
                 <Spacer height={20} />
 
-                <Button styleName='primary' text={Strings.buttonSubmit} onPress={onSubmit} />
+                <Button styleName='primary' text={Strings.buttonSubmit()} onPress={onSubmit} />
             </View>
 
-            <Button color='red' secondary backIcon text={Strings.buttonBack} onPress={props.onGoBack} />
+            <Button color='red' secondary backIcon text={Strings.buttonBack()} onPress={props.onGoBack} />
 
             <Spacer height={20} />
 

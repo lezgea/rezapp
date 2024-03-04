@@ -6,35 +6,35 @@ import { Strings } from '../constants';
 export default function PortalScreen(props) {
     const actions = [
         {
-            text: Strings.actionViewAnnouncements,
+            text: Strings.actionViewAnnouncements(),
             action: () => props.onSelectAction('announcements'),
         },
         {
-            text: Strings.actionRequestHandyman,
+            text: Strings.actionRequestHandyman(),
             action: () => props.onSelectAction('cta-handyman'),
         },
         {
-            text: Strings.actionFileComplaint,
+            text: Strings.actionFileComplaint(),
             action: () => props.onSelectAction('cta-complaint'),
         },
         {
-            text: Strings.actionViewOrPayInvoices,
+            text: Strings.actionViewOrPayInvoices(),
             action: () => props.onSelectAction('invoices'),
         },
         {
-            text: Strings.actionDiscussWithCommunity,
+            text: Strings.actionDiscussWithCommunity(),
             //action: () => {},
         },
         {
-            text: Strings.actionViewDocuments,
+            text: Strings.actionViewDocuments(),
             action: () => props.onSelectAction('documents'),
         },
         {
-            text: Strings.actionViewMembers,
+            text: Strings.actionViewMembers(),
             action: () => props.onSelectAction('members'),
         },
         {
-            text: Strings.actionViewBuildingsAndUnits,
+            text: Strings.actionViewBuildingsAndUnits(),
             action: () => props.onSelectAction('units'),
         },
     ];
@@ -61,7 +61,7 @@ export default function PortalScreen(props) {
                 style={styles.list}
             />
 
-            <Button color='red' secondary backIcon text={Strings.buttonBack} onPress={props.onGoBack} />
+            <Button color='red' secondary backIcon text={Strings.buttonBack()} onPress={props.onGoBack} />
 
             <Spacer height={20} />
         </View>

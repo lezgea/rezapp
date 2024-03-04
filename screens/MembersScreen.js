@@ -53,7 +53,7 @@ export default function MembersScreen(props) {
             <Spacer height={20} />
 
             <Text style={styles.title}>
-                {Strings.titleMembers}
+                {Strings.titleMembers()}
             </Text>
 
             <Spacer height={20} />
@@ -64,7 +64,7 @@ export default function MembersScreen(props) {
                 keyExtractor={item => `${item.id}`}
             />
 
-            <Button color='red' secondary backIcon text={Strings.buttonBack} onPress={props.onGoBack} />
+            <Button color='red' secondary backIcon text={Strings.buttonBack()} onPress={props.onGoBack} />
 
             <Spacer height={20} />
 
@@ -73,13 +73,13 @@ export default function MembersScreen(props) {
                     <View style={styles.modalView}>
                         <Text style={styles.modalTitle}>{selectedMember?.first_name} {selectedMember?.last_name}</Text>
 
-                        <Text style={styles.modalBold}>{Strings.captionShareholderOf}</Text>
+                        <Text style={styles.modalBold}>{Strings.captionShareholderOf()}</Text>
                         <Text style={styles.modalText}>{selectedMember?.unit_assignments?.filter(ua => !!ua.is_shareholder).map(ua => `• ${ua.url_slug}`).join('\n')}</Text>
 
-                        <Text style={styles.modalBold}>{Strings.captionTenantOf}</Text>
+                        <Text style={styles.modalBold}>{Strings.captionTenantOf()}</Text>
                         <Text style={styles.modalText}>{selectedMember?.unit_assignments?.filter(ua => !!ua.is_tenant).map(ua => `• ${ua.url_slug}`).join('\n')}</Text>
 
-                        <Button text={Strings.buttonOK} onPress={() => setSelectedMemberIndex(null)} />
+                        <Button text={Strings.buttonOK()} onPress={() => setSelectedMemberIndex(null)} />
                     </View>
                 </View>
             </Modal>

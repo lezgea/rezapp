@@ -24,7 +24,7 @@ export default function InvoicesScreen(props) {
 
     const renderInv = ({item, index}) => {
         const inv = item;
-        const badgeText = inv.remaining_amount_cents>0 ? Strings.captionInvoiceDue : Strings.captionInvoicePaidInFull;
+        const badgeText = inv.remaining_amount_cents>0 ? Strings.captionInvoiceDue() : Strings.captionInvoicePaidInFull();
         const badgeStyle = inv.remaining_amount_cents>0 ? 'danger' : 'success';
         return (<ListItem styleName='secondary' text={inv.description} badgeText={badgeText} badgeStyle={badgeStyle} onPress={() => setSelectedInvoiceIndex(index)} />);
     };
@@ -36,7 +36,7 @@ export default function InvoicesScreen(props) {
             <Spacer height={20} />
 
             <Text style={styles.title}>
-                {Strings.titleInvoices}
+                {Strings.titleInvoices()}
             </Text>
 
             <Spacer height={20} />
@@ -47,7 +47,7 @@ export default function InvoicesScreen(props) {
                 keyExtractor={item => `${item.id}`}
             />
 
-            <Button color='red' secondary backIcon text={Strings.buttonBack} onPress={props.onGoBack} />
+            <Button color='red' secondary backIcon text={Strings.buttonBack()} onPress={props.onGoBack} />
 
             <Spacer height={20} />
 
@@ -56,25 +56,25 @@ export default function InvoicesScreen(props) {
                     <View style={styles.modalView}>
                         <Text style={styles.modalTitle}>{selectedInvoice?.description}</Text>
 
-                        <Text style={styles.modalBold}>{Strings.captionInvoiceSummary}</Text>
+                        <Text style={styles.modalBold}>{Strings.captionInvoiceSummary()}</Text>
                         <View style={{flexDirection:'row'}}>
-                            <Text style={{flex:1}}>{Strings.captionInvoiceAmountCharged}</Text>
+                            <Text style={{flex:1}}>{Strings.captionInvoiceAmountCharged()}</Text>
                             <Text style={styles.modalText}>{prettyMoney(selectedInvoice?.charged_amount_cents)}</Text>
                         </View>
                         <View style={{flexDirection:'row'}}>
-                            <Text style={{flex:1}}>{Strings.captionInvoiceAmountPaid}</Text>
+                            <Text style={{flex:1}}>{Strings.captionInvoiceAmountPaid()}</Text>
                             <Text style={styles.modalText}>{prettyMoney(selectedInvoice?.paid_amount_cents)}</Text>
                         </View>
                         <View style={{flexDirection:'row'}}>
-                            <Text style={{flex:1}}>{Strings.captionInvoiceAmountDue}</Text>
+                            <Text style={{flex:1}}>{Strings.captionInvoiceAmountDue()}</Text>
                             <Text style={styles.modalText}>{prettyMoney(selectedInvoice?.remaining_amount_cents)}</Text>
                         </View>
                         <View style={{flexDirection:'row'}}>
-                            <Text style={{flex:1}}>{Strings.captionInvoiceURL}</Text>
+                            <Text style={{flex:1}}>{Strings.captionInvoiceURL()}</Text>
                             <Text style={styles.modalTextUrl} onPress={() => openInv(selectedInvoice?.url)}>{selectedInvoice?.url}</Text>
                         </View>
 
-                        <Text style={styles.modalBold}>{Strings.captionInvoiceLineItems}</Text>
+                        <Text style={styles.modalBold}>{Strings.captionInvoiceLineItems()}</Text>
                         {selectedInvoice?.line_items.map((li,idx) => (
                             <View style={{flexDirection:'row'}} key={`${idx}`}>
                                 <Text style={{flex:1}}>{li.description}</Text>
@@ -82,7 +82,7 @@ export default function InvoicesScreen(props) {
                             </View>
                         ))}
 
-                        <Button text={Strings.buttonOK} onPress={() => setSelectedInvoiceIndex(null)} />
+                        <Button text={Strings.buttonOK()} onPress={() => setSelectedInvoiceIndex(null)} />
                     </View>
                 </View>
             </Modal>

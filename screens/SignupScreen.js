@@ -49,33 +49,33 @@ export default function SignupScreen(props) {
 
             <Spacer height={20} />
 
-            <Input placeholder={Strings.placeholderFirstName} autoCapitalize='characters' value={firstName} onChangeText={setFirstName} />
+            <Input placeholder={Strings.placeholderFirstName()} autoCapitalize='characters' value={firstName} onChangeText={setFirstName} />
 
             <Spacer height={20} />
 
-            <Input placeholder={Strings.placeholderLastName} autoCapitalize='characters' value={lastName} onChangeText={setLastName} />
+            <Input placeholder={Strings.placeholderLastName()} autoCapitalize='characters' value={lastName} onChangeText={setLastName} />
 
             <Spacer height={20} />
 
-            <Input placeholder={Strings.placeholderPhoneNumber} keyboardType='phone-pad' value={phone} onChangeText={setPhone} />
+            <Input placeholder={Strings.placeholderPhoneNumber()} keyboardType='phone-pad' value={phone} onChangeText={setPhone} />
 
             <Spacer height={20} />
 
-            <Input placeholder={Strings.placeholderEmailAddress} autoCapitalize='none' value={email} onChangeText={setEmail} />
+            <Input placeholder={Strings.placeholderEmailAddress()} autoCapitalize='none' value={email} onChangeText={setEmail} />
 
             <Spacer height={20} />
 
-            <Input placeholder={Strings.placeholderPassword} autoCapitalize='none' secureTextEntry value={password} onChangeText={setPassword} />
+            <Input placeholder={Strings.placeholderPassword()} autoCapitalize='none' secureTextEntry value={password} onChangeText={setPassword} />
 
             <Spacer height={20} />
 
-            <Button text={Strings.buttonRegister} onPress={onPressRegister} />
+            <Button text={Strings.buttonRegister()} onPress={onPressRegister} />
 
             <Spacer height={100} />
 
-            <Text style={styles.caption}>{Strings.captionHaveAnAccount}</Text>
+            <Text style={styles.caption}>{Strings.captionHaveAnAccount()}</Text>
 
-            <Button text={Strings.buttonLogIn} secondary disabled={loading} onPress={props.onPressLogin} />
+            <Button text={Strings.buttonLogIn()} secondary disabled={loading} onPress={props.onPressLogin} />
         </View>
     );
 }

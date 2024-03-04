@@ -50,7 +50,7 @@ export default function UnitsScreen(props) {
         };
 
         const isVacant = (item.shareholders.length + item.tenants.length) === 0;
-        const badgeText = isVacant ? Strings.captionVacant : '';
+        const badgeText = isVacant ? Strings.captionVacant() : '';
         const badgeStyle = isVacant ? 'warning' : '';
 
         return (<ListItem styleName='secondary' text={unit.name} badgeText={badgeText} badgeStyle={badgeStyle} onPress={() => setSelectedUnitIndex(index)} />);
@@ -81,7 +81,7 @@ export default function UnitsScreen(props) {
             <Spacer height={20} />
 
             <Text style={styles.title}>
-                {Strings.titleBuildingsAndUnits}
+                {Strings.titleBuildingsAndUnits()}
             </Text>
 
             <Spacer height={20} />
@@ -101,7 +101,7 @@ export default function UnitsScreen(props) {
                 keyExtractor={item => `${item.id}`}
             />}
 
-            <Button color='red' secondary backIcon text={Strings.buttonBack} onPress={props.onGoBack} />
+            <Button color='red' secondary backIcon text={Strings.buttonBack()} onPress={props.onGoBack} />
 
             <Spacer height={20} />
 
@@ -110,13 +110,13 @@ export default function UnitsScreen(props) {
                     <View style={styles.modalView}>
                         <Text style={styles.modalTitle}>{selectedUnit?.url_slug}</Text>
 
-                        <Text style={styles.modalBold}>{Strings.captionShareholders}</Text>
+                        <Text style={styles.modalBold}>{Strings.captionShareholders()}</Text>
                         <Text style={styles.modalText}>{selectedUnit?.shareholders.map(s => `• ${s.full_name}`).join('\n')}</Text>
 
-                        <Text style={styles.modalBold}>{Strings.captionTenants}</Text>
+                        <Text style={styles.modalBold}>{Strings.captionTenants()}</Text>
                         <Text style={styles.modalText}>{selectedUnit?.tenants.map(s => `• ${s.full_name}`).join('\n')}</Text>
 
-                        <Button text={Strings.buttonOK} onPress={() => setSelectedUnitIndex(null)} />
+                        <Button text={Strings.buttonOK()} onPress={() => setSelectedUnitIndex(null)} />
                     </View>
                 </View>
             </Modal>

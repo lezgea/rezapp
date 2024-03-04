@@ -38,7 +38,7 @@ export default function AccountSelectionScreen(props) {
 
             <View style={{flexDirection:'row', justifyContent:'space-between'}}>
                 <Text style={styles.title}>
-                    {Strings.titleGreeting.replace('%s', props.user.first_name)}
+                    {Strings.titleGreeting().replace('%s', props.user.first_name)}
                 </Text>
 
                 <Ionicons
@@ -52,7 +52,7 @@ export default function AccountSelectionScreen(props) {
             <Spacer height={20} />
 
             <Text>
-                {Strings.captionHereAreAllYourMemberships}
+                {Strings.captionHereAreAllYourMemberships()}
             </Text>
 
             <Spacer height={20} />
@@ -63,7 +63,7 @@ export default function AccountSelectionScreen(props) {
                 keyExtractor={item => `${item.id}`}
             />
 
-            <Button color='red' secondary text={Strings.buttonLogOut} onPress={props.onLogout} />
+            <Button color='red' secondary text={Strings.buttonLogOut()} onPress={props.onLogout} />
 
             <Spacer height={20} />
         </View>

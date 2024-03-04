@@ -35,67 +35,67 @@ export default function UserSettingsScreen(props) {
         await Linking.openURL('mailto:support@rezidy.com')
     };
 
-    const versionString = Strings.captionAppVersion.replace('%s', getAppVersion())
+    const versionString = Strings.captionAppVersion().replace('%s', getAppVersion())
 
     return (
         <View style={styles.container}>
             <Spacer height={20} />
 
             <View style={{flexDirection:'row', justifyContent:'space-between'}}>
-            <Text>{Strings.labelFirstName}</Text>
+            <Text>{Strings.labelFirstName()}</Text>
                 <Text>{user?.first_name}</Text>
             </View>
 
             <Spacer height={20} />
 
             <View style={{flexDirection:'row', justifyContent:'space-between'}}>
-            <Text>{Strings.labelLastName}</Text>
+            <Text>{Strings.labelLastName()}</Text>
                 <Text>{user?.last_name}</Text>
             </View>
 
             <Spacer height={20} />
 
             <View style={{flexDirection:'row', justifyContent:'space-between'}}>
-                <Text>{Strings.labelEmailAddress}</Text>
+                <Text>{Strings.labelEmailAddress()}</Text>
                 <Text>{user?.email_address}</Text>
             </View>
 
             <Spacer height={20} />
 
             <View style={{flexDirection:'row', justifyContent:'space-between', alignItems:'center'}}>
-                <Text>{Strings.labelEmailAddressVerified}</Text>
-                <Badge styleName={user?.email_address_verified ? 'success' : 'warning'} text={user?.email_address_verified ? Strings.labelYes : Strings.labelNo} />
+                <Text>{Strings.labelEmailAddressVerified()}</Text>
+                <Badge styleName={user?.email_address_verified ? 'success' : 'warning'} text={user?.email_address_verified ? Strings.labelYes() : Strings.labelNo()} />
             </View>
 
             <Spacer height={20} />
 
             <View style={{flexDirection:'row', justifyContent:'space-between'}}>
-                <Text>{Strings.labelPhoneNumber}</Text>
+                <Text>{Strings.labelPhoneNumber()}</Text>
                 <Text>{user?.phone_number}</Text>
             </View>
 
             <Spacer height={20} />
 
             <View style={{flexDirection:'row', justifyContent:'space-between', alignItems:'center'}}>
-                <Text>{Strings.labelPhoneNumberVerified}</Text>
-                <Badge styleName={user?.phone_number_verified ? 'success' : 'warning'} text={user?.phone_number_verified ? Strings.labelYes : Strings.labelNo} />
+                <Text>{Strings.labelPhoneNumberVerified()}</Text>
+                <Badge styleName={user?.phone_number_verified ? 'success' : 'warning'} text={user?.phone_number_verified ? Strings.labelYes() : Strings.labelNo()} />
             </View>
 
             <Spacer height={100} />
 
-            <Text style={styles.caption}>{Strings.captionEditingUserInfoNotSupportedYet}</Text>
+            <Text style={styles.caption}>{Strings.captionEditingUserInfoNotSupportedYet()}</Text>
 
             <Spacer height={100} />
 
-            <Button color='blue' text={Strings.buttonContactSupport} onPress={onPressContact} />
+            <Button color='blue' text={Strings.buttonContactSupport()} onPress={onPressContact} />
 
             <Spacer height={20} />
 
-            <Button color='red' text={Strings.buttonDeleteMyProfile} onPress={onPressDelete} />
+            <Button color='red' text={Strings.buttonDeleteMyProfile()} onPress={onPressDelete} />
 
             <Spacer height={20} />
 
-            <Button color='red' secondary backIcon text={Strings.buttonBack} onPress={props.onGoBack} />
+            <Button color='red' secondary backIcon text={Strings.buttonBack()} onPress={props.onGoBack} />
 
             <Spacer height={20} />
 
