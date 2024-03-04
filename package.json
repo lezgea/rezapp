@@ -20,7 +20,7 @@
     "react-native": "0.73.5",
     "react-native-toast-message": "^2.1.7",
     "react-native-vector-icons": "^8.1.0",
-    "react-native-web": "~0.19.6"
+    "react-native-web": "~0.19.10"
   },
   "devDependencies": {
     "@babel/core": "^7.21.3"
