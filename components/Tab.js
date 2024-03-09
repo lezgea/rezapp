@@ -23,7 +23,6 @@ const styles = StyleSheet.create({
     // button
     button: {
         height: 55,
-        minWidth: 160,
         paddingHorizontal: 30,
         flexDirection: "row",
         justifyContent: "space-between",
