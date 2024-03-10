@@ -4,7 +4,7 @@ import { expo } from './app.json';
 
 function _getApiBaseUrl() {
     const baseUrl = process.env.EXPO_PUBLIC_API_BASE_URL;
-    return baseUrl || 'https://api.rezidy.com/v2';
+    return baseUrl || 'https://api.rezidy.com';
 }
 const API_BASE_URL = _getApiBaseUrl();
 
@@ -199,7 +199,7 @@ async function _refreshToken() {
     const payload = {
         refresh_token: refreshToken,
     };
-    const res = await _post('/RefreshToken', payload);
+    const res = await _post('/v2/RefreshToken', payload);
     if (res.status == 200) {
         _storeToken(res.body);
         return true;
@@ -226,7 +226,7 @@ export const rezSignup = async (user) => {
         email_address: user.email,
         password: user.password,
     };
-    const res = await _post('/Signup', payload);
+    const res = await _post('/v2/Signup', payload);
 
     const ret = {};
     if (res.status == 200) {
@@ -241,7 +241,7 @@ export const rezSignup = async (user) => {
 }
 
 export const rezDeleteMyself = async () => {
-    const res = await _delete('/DeleteMyself');
+    const res = await _delete('/v2/DeleteMyself');
 
     const ret = {};
     if (res.status == 204) {
@@ -257,7 +257,7 @@ export const rezAuthenticate = async (email_address, password) => {
         email_address,
         password,
     };
-    const res = await _post('/Authenticate', payload);
+    const res = await _post('/v2/Authenticate', payload);
 
     const ret = {};
     if (res.status == 200) {
@@ -277,7 +277,7 @@ export const rezIsLoggedIn = async () => {
 };
 
 export const rezGetMemberships = async () => {
-    const res = await _withRetry(() => _get('/GetMemberships'));
+    const res = await _withRetry(() => _get('/v2/GetMemberships'));
 
     if (res.status == 200) {
         return res.body.memberships;
@@ -286,7 +286,7 @@ export const rezGetMemberships = async () => {
 };
 
 export const rezGetUserDetails = async () => {
-    const res = await _withRetry(() => _get('/GetUserDetails'));
+    const res = await _withRetry(() => _get('/v2/GetUserDetails'));
 
     if (res.status == 200) {
         return res.body.user;
@@ -298,7 +298,7 @@ export const rezSelectAccountContext = async (account_id) => {
     const payload = {
         account_id,
     };
-    const res = await _withRetry(() => _post('/SelectAccountContext', payload));
+    const res = await _withRetry(() => _post('/v2/SelectAccountContext', payload));
 
     if (res.status == 200) {
         await _storeToken(res.body);
@@ -308,7 +308,7 @@ export const rezSelectAccountContext = async (account_id) => {
 };
 
 export const rezGetAnnouncements = async () => {
-    const res = await _withRetry(() => _get('/GetAnnouncements'));
+    const res = await _withRetry(() => _get('/v2/GetAnnouncements'));
 
     if (res.status == 200) {
         return res.body.announcements;
@@ -317,7 +317,7 @@ export const rezGetAnnouncements = async () => {
 };
 
 export const rezGetDocuments = async () => {
-    const res = await _withRetry(() => _get('/GetDocuments'));
+    const res = await _withRetry(() => _get('/v2/GetDocuments'));
 
     if (res.status == 200) {
         return res.body.documents;
@@ -326,7 +326,7 @@ export const rezGetDocuments = async () => {
 };
 
 export const rezGetMyInvoices = async () => {
-    const res = await _withRetry(() => _get('/GetMyInvoices'));
+    const res = await _withRetry(() => _get('/v2/GetMyInvoices'));
 
     if (res.status == 200) {
         return res.body.invoices;
@@ -335,7 +335,7 @@ export const rezGetMyInvoices = async () => {
 };
 
 export const rezGetMembers = async () => {
-    const res = await _withRetry(() => _get('/GetMemberList'));
+    const res = await _withRetry(() => _get('/v2/GetMemberList'));
 
     if (res.status == 200) {
         return res.body.members;
@@ -344,7 +344,7 @@ export const rezGetMembers = async () => {
 };
 
 export const rezGetMemberUnitAssignments = async (id) => {
-    const res = await _withRetry(() => _get(`/GetMemberUnitAssignments/${id}`));
+    const res = await _withRetry(() => _get(`/v2/GetMemberUnitAssignments/${id}`));
 
     if (res.status == 200) {
         return res.body.unit_assignments;
@@ -353,7 +353,7 @@ export const rezGetMemberUnitAssignments = async (id) => {
 };
 
 export const rezGetBuildings = async () => {
-    const res = await _withRetry(() => _get('/GetBuildingList'));
+    const res = await _withRetry(() => _get('/v2/GetBuildingList'));
 
     if (res.status == 200) {
         return res.body.buildings;
@@ -362,7 +362,7 @@ export const rezGetBuildings = async () => {
 };
 
 export const rezGetBuildingDirectory = async (slug) => {
-    const res = await _withRetry(() => _get(`/GetBuildingDirectory_v2/${slug}`));
+    const res = await _withRetry(() => _get(`/v2/GetBuildingDirectory_v2/${slug}`));
 
     if (res.status == 200) {
         return res.body.directory;
@@ -371,7 +371,7 @@ export const rezGetBuildingDirectory = async (slug) => {
 }
 
 export const rezGetUnits = async () => {
-    const res = await _withRetry(() => _get('/GetUnits'));
+    const res = await _withRetry(() => _get('/v2/GetUnits'));
 
     if (res.status == 200) {
         return res.body.buildings;
@@ -380,7 +380,7 @@ export const rezGetUnits = async () => {
 };
 
 export const rezGetUnitDetails = async (slug) => {
-    const res = await _withRetry(() => _get(`/GetUnitDetails/${slug}`));
+    const res = await _withRetry(() => _get(`/v2/GetUnitDetails/${slug}`));
 
     if (res.status == 200) {
         return res.body.unit;
@@ -389,7 +389,7 @@ export const rezGetUnitDetails = async (slug) => {
 };
 
 export const rezGetUnitMemberAssignments = async (slug) => {
-    const res = await _withRetry(() => _get(`/GetUnitMemberAssignments/${slug}`));
+    const res = await _withRetry(() => _get(`/v2/GetUnitMemberAssignments/${slug}`));
 
     if (res.status == 200) {
         return res.body.member_assignments;
@@ -411,7 +411,7 @@ export const rezUploadImageViaForm = async (uri) => {
     const fd = new FormData();
     fd.append('file', file);
 
-    const res = await _withRetry(() => _postForm('/UploadFile', fd));
+    const res = await _withRetry(() => _postForm('/v2/UploadFile', fd));
     if (res.status == 200) {
         return res.body.file;
     }
@@ -425,7 +425,7 @@ export const rezSaveCTA = async (cta) => {
     const payload = {
         ...cta,
     };
-    const res = await _post('/SaveCTA', payload);
+    const res = await _post('/v2/SaveCTA', payload);
     if (res.status == 200) {
         return res.body;
     }
