@@ -7,26 +7,7 @@ function _getApiBaseUrl() {
     return baseUrl.trim() || 'https://api.rezidy.com';
 }
 const API_BASE_URL = _getApiBaseUrl();
-
-function _getApiKey(platform) {
-    if (platform == 'ios') {
-        return '759d80a46bc3909721690e2b51690fd9';
-    }
-    if (platform == 'android') {
-        return '1e052173bf35ae177131ae59b7fa98bd';
-    }
-    if (platform == 'windows') {
-        return 'b43386d81088d05f341c112c67017bd2';
-    }
-    if (platform == 'macos') {
-        return 'd3974ba2f9d66e9ee6d62689388873ca';
-    }
-    if (platform == 'web') {
-        return '8ece2254ad413998fe2e5fa23255b158';
-    }
-    return null;
-}
-const API_KEY = _getApiKey(Platform.OS);
+const API_KEY = '1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d';
 
 let accessToken = null;
 let refreshToken = null;
