@@ -3,8 +3,8 @@ import { Platform } from 'react-native';
 import { expo } from './app.json';
 
 function _getApiBaseUrl() {
-    const baseUrl = process.env.EXPO_PUBLIC_API_BASE_URL;
-    return baseUrl || 'https://api.rezidy.com';
+    const baseUrl = process.env.EXPO_PUBLIC_API_BASE_URL || '';
+    return baseUrl.trim() || 'https://api.rezidy.com';
 }
 const API_BASE_URL = _getApiBaseUrl();
 
