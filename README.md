@@ -2,6 +2,10 @@
 
 ### Pre-requisites
 - Node v20
+- Physical mobile device (highly recommended)
+- Expo Go app
+    - for [iOS](https://apps.apple.com/us/app/expo-go/id982107779)
+    - for [Android](https://play.google.com/store/apps/details?id=host.exp.exponent)
 
 ### Getting Started
 ```bash
@@ -12,10 +16,12 @@ npm ci
 cp .env.template .env
 ```
 
-### Running the Expo Server
-```bash
-npm start
-```
+### Running the App
+Start the Expo server by running `npm start`  
+Ensure that your mobile device and development machine are on the same WiFi network.  
+Open Expo Go, and it should automatically find your development server - click on it!  
+The app should hot reload when changes are made to the code.  
+To trigger a reload manually, you can press "r" in the terminal where the Expo server is running.  
 
 ### Environment Variables
 By default, the app will hit the production API server.  
