@@ -93,11 +93,11 @@ export default function UserSettingsScreen(props) {
                 <Badge styleName={user?.phone_number_verified ? 'success' : 'warning'} text={user?.phone_number_verified ? Strings.labelYes() : Strings.labelNo()} />
             </View>
 
-            <Spacer height={100} />
+            <Spacer height={50} />
 
             <Text style={styles.caption}>{Strings.captionEditingUserInfoNotSupportedYet()}</Text>
 
-            <Spacer height={100} />
+            <Spacer height={50} />
 
             <View style={{flexDirection:'column', alignItems:'center'}}>
             <FlatList
