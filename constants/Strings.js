@@ -2,6 +2,8 @@ import { t } from "../strings";
 
 export default Strings = {
     appName: () => t('appName'),
+    langId: () => t('langId'),
+    langNativeName: () => t('langNativeName'),
 
     placeholderFirstName: () => t('placeholderFirstName'),
     placeholderLastName: () => t('placeholderLastName'),

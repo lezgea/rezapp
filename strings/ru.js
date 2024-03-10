@@ -1,5 +1,7 @@
 export default Strings = {
     appName: 'Rezidy',
+    langId: 'ru',
+    langNativeName: 'Русский',
 
     placeholderFirstName: 'Имя',
     placeholderLastName: 'Фамилия',

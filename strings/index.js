@@ -3,18 +3,14 @@ import en from './en';
 import es from './es';
 import ru from './ru';
 
-const LANGUAGES = [
-  {id:'en', name:'English', src:en},
-  {id:'es', name:'Español', src:es},
-  {id:'ru', name:'Русский', src:ru},
-];
+const LANGUAGES = [en, es, ru];
 
 const LANGS_BY_ID = {};
-for (const lang of LANGUAGES) {
-  LANGS_BY_ID[lang.id] = lang;
+for (const src of LANGUAGES) {
+  LANGS_BY_ID[src.langId] = src;
 }
 
-let currLangId = 'en'; // TODO: read from system?
+let currLangId = en.langId; // TODO: read from system?
 
 loadLangFromStorage();
 
@@ -31,12 +27,13 @@ async function loadLangFromStorage() {
  * @returns string - the localized string
  */
 export function t(strKey) {
-  const src = LANGS_BY_ID[currLangId].src;
+  const src = LANGS_BY_ID[currLangId];
   return src[strKey];
 }
 
 export function* getSupportedLanguages() {
-  for (const {id, name} of LANGUAGES) {
+  for (const src of LANGUAGES) {
+    const {langId:id, langNativeName:name} = src;
     yield {id, name};
   }
 }
