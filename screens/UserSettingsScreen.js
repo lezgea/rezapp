@@ -100,11 +100,11 @@ export default function UserSettingsScreen(props) {
             <Spacer height={20} />
 
             <View style={{flexDirection:'column', alignItems:'center'}}>
-            <FlatList
-                data={[...getSupportedLanguages()]}
-                renderItem={renderLanguageTab}
-                horizontal
-            />
+                <FlatList
+                    data={[...getSupportedLanguages()]}
+                    renderItem={renderLanguageTab}
+                    horizontal
+                />
             </View>
 
             <Spacer height={20} />
