@@ -41,11 +41,12 @@ async function _fetch(url, options) {
     }
 
     const logLines = [];
-
-    logLines.push(`==========HTTP Dump`);
-    logLines.push(`Request Method: ${options.method}`);
-    logLines.push(`Request URL: ${url}`);
-    logLines.push(`Request Headers: ${JSON.stringify(options.headers, null, 4)}`);
+    logLines.push(`# ======= HTTP Dump: ${options.method} ${url.replace(API_BASE_URL,'')}`);
+    logLines.push(`curl -X ${options.method} \\`);
+    for (const key in options.headers) {
+        const val = options.headers[key];
+        logLines.push(`    -H '${key}: ${val}' \\`);
+    }
     if (options.body) {
         const logBody = { ...options.body };
         if (logBody.password) {
@@ -53,12 +54,20 @@ async function _fetch(url, options) {
         }
 
         if (options.body instanceof FormData) {
-            logLines.push(`Request Body (FORM): ${JSON.stringify(logBody, null, 4)}`);
+            for (const part of options.body.getParts()) {
+                if (part.string) {
+                    logLines.push(`    -F '${part.fieldName}="${part.string}"' \\`);
+                } else if (part.uri) {
+                    const path = part.uri.replace('file://', '');
+                    logLines.push(`    -F '${part.fieldName}=@"${path}"' \\`);
+                }
+            }
         } else {
-            logLines.push(`Request Body: ${JSON.stringify(logBody, null, 4)}`);
+            logLines.push(`    -d '${JSON.stringify(logBody)}' \\`);
             options.body = JSON.stringify(options.body);
         }
     }
+    logLines.push(`    ${url}`);
 
     let res = null;
     try {
@@ -71,7 +80,7 @@ async function _fetch(url, options) {
             text: () => err.message,
         };
     }
-    
+
     const ret = {
         is2xx: res.status>=200 && res.status<=299,
         is3xx: res.status>=300 && res.status<=399,
@@ -83,8 +92,8 @@ async function _fetch(url, options) {
         body: await res.text(),
     };
 
-    logLines.push(`Response Status: ${ret.status}`);
-    //logLines.push(`Response Headers: ${JSON.stringify(ret.headers, null, 4)}`);
+    logLines.push(`# Response Status: ${ret.status}`);
+    //logLines.push(`# Response Headers: ${JSON.stringify(ret.headers, null, 4)}`);
 
     try {
         if (ret.body !== '') {
