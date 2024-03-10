@@ -391,6 +391,7 @@ export const rezUploadImageViaForm = async (uri) => {
 
     const fd = new FormData();
     fd.append('file', file);
+    fd.append('type', 'attachment');
 
     const res = await _withRetry(() => _postForm('/v2/UploadFile', fd));
     if (res.status == 200) {
