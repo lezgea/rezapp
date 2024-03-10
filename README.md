@@ -21,13 +21,13 @@ Start the Expo server by running `npm start`
 Ensure that your mobile device and development machine are on the same WiFi network.  
 Open Expo Go, and it should automatically find your development server - click on it!  
 The app should hot reload when changes are made to the code.  
-To trigger a reload manually, you can press "r" in the terminal where the Expo server is running.  
+To trigger a reload manually, you can press 'r' in the terminal where the Expo server is running.  
 
 ### Environment Variables
 By default, the app will hit the production API server.  
 This, of course, is not ideal.  
 If you are running the API server locally, you can set `EXPO_PUBLIC_API_BASE_URL` in your `.env` to be the address of your development machine.  
-For me, it is `http://Emils-MacBook-Pro.local:3010`.  
+For me, it is `http://Emils-MacBook-Pro.local:3010`  
 To have your `.env` changes reflected, simply reload the app (or press 'r' in Expo's terminal).  
 Note that empty string values will NOT be reflected and so you would see the previous value for those variables.  
 For this reason, I suggest defaulting to a space and trimming the values in application code.  
