@@ -77,7 +77,7 @@ export default function UnitsScreen(props) {
     const selectedUnit = getSelectedUnit();
 
     return (
-        <View>
+        <View style={styles.container}>
             <Spacer height={20} />
 
             <Text style={styles.title}>
@@ -125,6 +125,9 @@ export default function UnitsScreen(props) {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        paddingHorizontal: 20,
+    },
     title: {
         fontSize: 20,
     },
