@@ -2,16 +2,11 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Platform } from 'react-native';
 import { expo } from './app.json';
 
-function _getApiBaseUrl(env) {
-    if (env == 'local') {
-        return 'http://Emils-MacBook-Pro.local:3010/v2';
-    }
-    if (env == 'dev') {
-        return 'https://api.rezidy.emilhus.com/v2';
-    }
-    return 'https://api.rezidy.com/v2';
+function _getApiBaseUrl() {
+    const baseUrl = process.env.EXPO_PUBLIC_API_BASE_URL;
+    return baseUrl || 'https://api.rezidy.com/v2';
 }
-const API_BASE_URL = _getApiBaseUrl('prod');
+const API_BASE_URL = _getApiBaseUrl();
 
 function _getApiKey(platform) {
     if (platform == 'ios') {
