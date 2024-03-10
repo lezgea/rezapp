@@ -14,7 +14,7 @@ for (const lang of LANGUAGES) {
   LANGS_BY_ID[lang.id] = lang;
 }
 
-let currLangId = 'en'; // TODO: read from system or storage
+let currLangId = 'en'; // TODO: read from system?
 
 loadLangFromStorage();
 
