@@ -13,9 +13,6 @@
       "channel": "preview"
     },
     "production": {
-      "env": {
-        "API_BASE_URL": "https://api.rezidy.com"
-      },
       "autoIncrement": true,
       "channel": "production"
     }
