@@ -47,7 +47,7 @@ export default function AccountSelectionScreen(props) {
                     color={Colors.blue}
                     onPress={props.onPressSettings}
                 />
-            </View>            
+            </View>
 
             <Spacer height={20} />
 
