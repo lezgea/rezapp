@@ -224,6 +224,13 @@ export const rezSignup = async (user) => {
         ret.user = res.body.user;
     } else if (res.status == 412) {
         ret.error = res.body;
+    } else if (res.status == 400) {
+        if (Array.isArray(res.body)) {
+            // Assume ZOD errors
+            ret.error = res.body.map(e => '- '+e.message).join('\n');
+        } else {
+            ret.error = res.body;
+        }
     } else {
         ret.error = 'Server Error';
     }
