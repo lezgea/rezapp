@@ -39,7 +39,7 @@ export default function WelcomeScreen(props) {
 
             <Spacer height={20} />
 
-            <Input placeholder={Strings.placeholderEmailAddress()} textContentType='username' autoCapitalize='none' value={email} onChangeText={setEmail} />
+            <Input placeholder={Strings.placeholderEmailAddress()} textContentType='emailAddress' autoCapitalize='none' value={email} onChangeText={setEmail} />
 
             <Spacer height={20} />
 
