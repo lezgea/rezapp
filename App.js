@@ -4,6 +4,8 @@ import {WelcomeScreen, AccountSelectionScreen, PortalScreen, AnnouncementsScreen
 import {Colors} from './constants';
 import { rezUnloadToken } from './api_client';
 
+
+
 export default function App() {
     const [screen, setScreen] = useState('welcome');
     const [user, setUser] = useState(null);
