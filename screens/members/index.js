@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, FlatList, Modal } from 'react-native';
-import { rezGetMembers, rezGetMemberUnitAssignments } from '../api_client';
-import { ListItem, Spacer, Button } from '../components';
-import { Strings } from '../constants';
+import { rezGetMembers, rezGetMemberUnitAssignments } from '../../api_client';
+import { ListItem, Spacer, Button } from '../../components';
+import { Strings } from '../../constants';
+
 
 export default function MembersScreen(props) {
     const [members, setMembers] = useState([]);

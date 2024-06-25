@@ -1,7 +1,7 @@
 import React from "react";
 import { TouchableOpacity, StyleSheet, Text } from "react-native";
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {Colors, Sizes} from "../constants";
+import {Colors, Sizes} from "../../constants";
 
 const Button = (props) => {
     const color = props.disabled ? 'disabled' : (props.color || 'blue');

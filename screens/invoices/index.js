@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, FlatList, Linking, Modal } from 'react-native';
-import { rezGetMyInvoices } from '../api_client';
-import { ListItem, Spacer, Button } from '../components';
-import { Colors, Strings } from '../constants';
-import { prettyMoney } from '../utils';
+import { rezGetMyInvoices } from '../../api_client';
+import { ListItem, Spacer, Button } from '../../components';
+import { Colors, Strings } from '../../constants';
+import { prettyMoney } from '../../utils';
 
 export default function InvoicesScreen(props) {
     const [invoices, setInvoices] = useState([]);

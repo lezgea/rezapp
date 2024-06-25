@@ -4,6 +4,7 @@ import { rezGetBuildings, rezGetBuildingDirectory } from '../api_client';
 import { ListItem, Tab, Spacer, Button } from '../components';
 import { Strings } from '../constants';
 
+
 export default function UnitsScreen(props) {
     const [buildings, setBuildings] = useState([]);
     const [selectedBuildingIndex, setSelectedBuildingIndex] = useState(null);

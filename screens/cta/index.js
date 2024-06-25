@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { StyleSheet, FlatList, Text, ImageBackground, View } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import Toast from 'react-native-toast-message';
-import { Spacer, Button, Input } from '../components';
-import { Strings } from '../constants';
-import { rezSaveCTA, rezUploadImageViaForm } from '../api_client';
+import { Spacer, Button, Input } from '../../components';
+import { Strings } from '../../constants';
+import { rezSaveCTA, rezUploadImageViaForm } from '../../api_client';
 
 export default function CTAScreen(props) {
     const ctaType = props.type;

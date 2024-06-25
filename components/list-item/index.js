@@ -1,8 +1,9 @@
 import React from "react";
 import { TouchableOpacity, StyleSheet, Text } from "react-native";
-import {Colors} from "../constants";
+import {Colors} from "../../constants";
+import { Badge } from "../badge";
 
-const Tab = (props) => {
+const ListItem = (props) => {
     const styleName = props.styleName || 'primary';
     const stylePrefix = props.disabled ? 'disabled' : styleName;
     const buttonStyle = styles[stylePrefix+'Button'];
@@ -13,19 +14,23 @@ const Tab = (props) => {
             <Text style={[styles.text, textStyle]} numberOfLines={1}>
                 {props.text}
             </Text>
+            <Badge
+                styleName={props.badgeStyle}
+                text={props.badgeText}
+            />
         </TouchableOpacity>
     );
 };
 
-export default Tab;
+export default ListItem;
 
 const styles = StyleSheet.create({
     // button
     button: {
         height: 55,
-        paddingHorizontal: 10,
+        minWidth: 250,
+        paddingHorizontal: 20,
         flexDirection: "row",
-        justifyContent: "space-between",
         alignItems: "center",
     },
     primaryButton: {
@@ -53,7 +58,6 @@ const styles = StyleSheet.create({
 
     // text
     text: {
-        textAlign: "center",
         fontSize: 15,
         flex: 1,
     },

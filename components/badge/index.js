@@ -2,7 +2,7 @@ import React from "react";
 import { TouchableOpacity, StyleSheet, Text } from "react-native";
 import {Colors} from "../constants";
 
-const Badge = (props) => {
+export const Badge = (props) => {
     const styleName = props.styleName || 'default';
     const buttonStyle = styles[styleName+'Button'];
 
@@ -15,7 +15,6 @@ const Badge = (props) => {
     );
 };
 
-export default Badge;
 
 const styles = StyleSheet.create({
     // button

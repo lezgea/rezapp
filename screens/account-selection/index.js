@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { rezGetMemberships, rezSelectAccountContext } from '../api_client';
-import { ListItem, Spacer, Button } from '../components';
-import { Strings, Sizes, Colors } from '../constants';
+import { rezGetMemberships, rezSelectAccountContext } from '../../api_client';
+import { ListItem, Spacer, Button } from '../../components';
+import { Strings, Sizes, Colors } from '../../constants';
 
 export default function AccountSelectionScreen(props) {
     const [accounts, setAccounts] = useState([]);

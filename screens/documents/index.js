@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, FlatList, Linking } from 'react-native';
-import { rezGetDocuments } from '../api_client';
-import { ListItem, Spacer, Button } from '../components';
-import { Strings } from '../constants';
+import { rezGetDocuments } from '../../api_client';
+import { ListItem, Spacer, Button } from '../../components';
+import { Strings } from '../../constants';
 
 export default function DocumentsScreen(props) {
     const [documents, setDocuments] = useState([]);

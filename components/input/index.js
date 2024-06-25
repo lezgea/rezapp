@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, TextInput, StyleSheet, FlatList } from "react-native";
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {Colors, Sizes} from "../constants";
+import {Colors, Sizes} from "../../constants";
 
 const Input = (props) => {
     const [open, setOpen] = useState(!props.secureTextEntry);

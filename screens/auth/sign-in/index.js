@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Alert, StyleSheet, Text, Image, View } from 'react-native';
-import { rezAuthenticate, rezGetUserDetails } from '../api_client';
-import { Button, Input, Spacer } from '../components';
-import { Colors, Images, Strings } from '../constants';
+import { rezAuthenticate, rezGetUserDetails } from '../../../api_client';
+import { Button, Input, Spacer } from '../../../components';
+import { Colors, Images, Strings } from '../../../constants';
 
-export default function WelcomeScreen(props) {
+
+export default function SignInScreen(props) {
     const [loading, setLoading] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
