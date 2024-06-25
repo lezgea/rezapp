@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
 import { ListItem, Spacer, Button } from '../../components'
-import { Strings } from '../../components';
+import { Strings } from '../../constants';
 
 
 export function PortalScreen(props) {
