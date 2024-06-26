@@ -25,14 +25,14 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-logo.png",
+        "foregroundImage": "./src/assets/adaptive-logo.png",
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.rezidy.app",
       "versionCode": 24
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./src/assets/favicon.png"
     },
     "extra": {
       "eas": {

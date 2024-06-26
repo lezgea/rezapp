@@ -1,6 +1,8 @@
 import React from "react";
 import { TouchableOpacity, StyleSheet, Text } from "react-native";
-import {Colors} from "../../constants";
+import { Colors } from "../../constants";
+
+
 
 export const Badge = (props) => {
     const styleName = props.styleName || 'default';

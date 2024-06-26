@@ -3,8 +3,9 @@ import { FlatList, Linking, StyleSheet, Text, View } from 'react-native';
 import { rezDeleteMyself, rezGetUserDetails } from '../../../api_client';
 import { Badge, Button, Spacer, Tab } from '../../components';
 import { Colors, Strings } from '../../constants';
-import { getAppVersion } from '../../utils/utils';
-import { getCurrentLangId, getSupportedLanguages, switchToLang } from '../../strings';
+import { getAppVersion } from '../../utils';
+import { getCurrentLangId, getSupportedLanguages, switchToLang } from '../../translations';
+
 
 
 export function UserSettingsScreen(props) {

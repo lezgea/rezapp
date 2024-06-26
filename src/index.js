@@ -1,6 +1,6 @@
 export * from './components'
 export * from './constants'
 export * from './screens'
-export * from './strings'
+export * from './translations'
 export * from './styles'
 export * from './utils'

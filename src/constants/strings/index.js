@@ -1,6 +1,6 @@
-import { t } from "../strings";
+import { t } from "../../translations";
 
-export default Strings = {
+export const Strings = {
     appName: () => t('appName'),
     langId: () => t('langId'),
     langNativeName: () => t('langNativeName'),

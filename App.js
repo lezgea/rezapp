@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { StyleSheet, SafeAreaView } from 'react-native';
 import { AccountSelectionScreen, SignInScreen, SignUpScreen, PortalScreen, AnnouncementsScreen, MembersScreen, UnitsScreen, DocumentsScreen, CTAScreen, UserSettingsScreen, InvoicesScreen} from './src/screens';
-import {Colors} from './src/constants';
 import { rezUnloadToken } from './api_client';
+import { Colors } from './src/constants';
 
 
 

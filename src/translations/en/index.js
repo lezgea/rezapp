@@ -1,4 +1,4 @@
-export default Strings = {
+export default EN_STRINGS = {
     appName: 'Rezidy',
     langId: 'en',
     langNativeName: 'English',

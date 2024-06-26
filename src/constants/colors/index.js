@@ -6,7 +6,7 @@ const gray = (arg) => {
     return `#${arg}${arg}${arg}`;
 };
 
-export default Colors = {
+export const Colors = {
     white: gray('ff'),
     black: gray('00'),
     lightGray: gray('e0'),

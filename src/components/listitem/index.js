@@ -1,7 +1,8 @@
 import React from "react";
 import { TouchableOpacity, StyleSheet, Text } from "react-native";
-import {Colors} from "../../constants";
-import { Badge } from "../../components";
+import { Badge } from "../badge";
+import { Colors } from "../../constants";
+
 
 export const ListItem = (props) => {
     const styleName = props.styleName || 'primary';
