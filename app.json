@@ -3,7 +3,7 @@
     "name": "Rezidy",
     "slug": "rezidy",
     "description": "",
-    "version": "1.6.5",
+    "version": "1.6.6",
     "orientation": "portrait",
     "icon": "./src/assets/logo.png",
     "splash": {
@@ -21,7 +21,7 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.rezidy.app",
-      "buildNumber": "15"
+      "buildNumber": "16"
     },
     "android": {
       "adaptiveIcon": {
@@ -29,7 +29,7 @@
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.rezidy.app",
-      "versionCode": 24
+      "versionCode": 25
     },
     "web": {
       "favicon": "./src/assets/favicon.png"
