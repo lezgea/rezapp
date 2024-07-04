@@ -32,13 +32,12 @@ async function _withRetry(fn) {
 }
 
 async function _fetch(url, options) {
+    await _loadToken();
+
     options.headers['x-rezidy-app-platform'] = Platform.OS;
     options.headers['x-rezidy-app-version'] = expo.version;
     options.headers['x-rezidy-client-token'] = API_KEY;
-    const token = await _loadToken();
-    if (token != null) {
-        options.headers['x-rezidy-auth-token'] = token;
-    }
+    options.headers['x-rezidy-auth-token'] = accessToken ?? '';
 
     const logLines = [];
     logLines.push(`# ======= HTTP Dump: ${options.method} ${url.replace(API_BASE_URL,'')}`);
