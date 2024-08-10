@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Alert, Text, Image, View, StyleSheet } from 'react-native';
-import { rezAuthenticate, rezGetUserDetails, rezSignup } from '../../../../api_client';
+import { rezAuthenticate, rezGetUserDetails, rezSignup } from '../../../api_client';
 import { Button, Input, Spacer } from '@/components';
 import { Images, Strings, Colors } from '@/constants';
 
