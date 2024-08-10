@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Alert, StyleSheet, Text, Image, View } from 'react-native';
+import { Alert, Text, Image, View, StyleSheet } from 'react-native';
 import { rezAuthenticate, rezGetUserDetails, rezSignup } from '../../../../api_client';
-import { Button, Input, Spacer } from '../../../components';
-import { Colors, Images, Strings } from '../../../constants';
+import { Button, Input, Spacer } from '@/components';
+import { Images, Strings, Colors } from '@/constants';
 
 
 export function SignUpScreen(props) {
@@ -13,18 +13,6 @@ export function SignUpScreen(props) {
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
-        async function fetchUserDetails() {
-            setLoading(true);
-            const user = await rezGetUserDetails();
-            setLoading(false);
-            if (user) {
-                props.onLogin(user);
-            }
-        }
-
-        fetchUserDetails();
-    }, []);
 
     const onPressRegister = async () => {
         setLoading(true);
@@ -42,11 +30,17 @@ export function SignUpScreen(props) {
         } else {
             props.onSignup(ret.user);
         }
-    };
+    }
+
+
+    const onPressLogin = () => {
+        props.navigation.navigate('Login')
+    }
+
 
     return (
-        <View style={styles.container}>
-            <Image source={Images.logo} style={styles.logo} />
+        <View style={s.container}>
+            <Image source={Images.logo} style={s.logo} />
 
             <Spacer height={20} />
 
@@ -74,17 +68,23 @@ export function SignUpScreen(props) {
 
             <Spacer height={100} />
 
-            <Text style={styles.caption}>{Strings.captionHaveAnAccount()}</Text>
+            <Text style={s.caption}>{Strings.captionHaveAnAccount()}</Text>
 
-            <Button text={Strings.buttonLogIn()} secondary disabled={loading} onPress={props.onPressLogin} />
+            <Button text={Strings.buttonLogIn()} secondary disabled={loading} onPress={onPressLogin} />
         </View>
     );
 }
 
-const styles = StyleSheet.create({
+
+
+const s = StyleSheet.create({
     container: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
         alignSelf: 'stretch',
         paddingHorizontal: 60,
+        height: '100%',
     },
     logo: {
         width: 100,

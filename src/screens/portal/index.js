@@ -1,26 +1,26 @@
 import React from 'react';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
-import { ListItem, Spacer, Button } from '../../components'
-import { Strings } from '../../constants';
+import { ListItem, Spacer, Button } from '@/components'
+import { Strings } from '@/constants';
 
 
 export function PortalScreen(props) {
     const actions = [
         {
             text: Strings.actionViewAnnouncements(),
-            action: () => props.onSelectAction('announcements'),
+            action: () => props.navigation.navigate('Announcements'),
         },
         {
             text: Strings.actionRequestHandyman(),
-            action: () => props.onSelectAction('cta-handyman'),
+            action: () => props.navigation.navigate('CTA'),
         },
         {
             text: Strings.actionFileComplaint(),
-            action: () => props.onSelectAction('cta-complaint'),
+            action: () => props.navigation.navigate('CTA'),
         },
         {
             text: Strings.actionViewOrPayInvoices(),
-            action: () => props.onSelectAction('invoices'),
+            action: () => props.navigation.navigate('Invoices'),
         },
         {
             text: Strings.actionDiscussWithCommunity(),
@@ -28,29 +28,35 @@ export function PortalScreen(props) {
         },
         {
             text: Strings.actionViewDocuments(),
-            action: () => props.onSelectAction('documents'),
+            action: () => props.navigation.navigate('Documents'),
         },
         {
             text: Strings.actionViewMembers(),
-            action: () => props.onSelectAction('members'),
+            action: () => props.navigation.navigate('Members'),
         },
         {
             text: Strings.actionViewBuildingsAndUnits(),
-            action: () => props.onSelectAction('units'),
+            action: () => props.navigation.navigate('Units'),
         },
     ];
 
-    const renderAction = ({item}) => {
+    const renderAction = ({ item }) => {
         const styleName = !!item.action ? 'secondary' : 'disabled';
         return (<ListItem styleName={styleName} forwardIcon text={item.text} onPress={item.action} />);
     }
 
+
+    React.useEffect(() => {
+        props.navigation.setOptions({ title: props.route.params?.title })
+    }, [])
+
+
     return (
-        <View style={styles.container}>
+        <View style={s.container}>
             <Spacer height={20} />
 
-            <Text style={styles.title}>
-                {props.account.name}
+            <Text style={s.title}>
+                {props.account?.name}
             </Text>
 
             <Spacer height={20} />
@@ -59,17 +65,18 @@ export function PortalScreen(props) {
                 data={actions}
                 renderItem={renderAction}
                 keyExtractor={item => `${item.text}`}
-                style={styles.list}
+                style={s.list}
             />
 
-            <Button color='red' secondary backIcon text={Strings.buttonBack()} onPress={props.onGoBack} />
+            {/*<Button color='red' secondary backIcon text={Strings.buttonBack()} onPress={props.onGoBack} />*/}
 
             <Spacer height={20} />
         </View>
     );
 }
 
-const styles = StyleSheet.create({
+
+const s = StyleSheet.create({
     container: {
         flex: 1,
         alignSelf: 'stretch',
