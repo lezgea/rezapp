@@ -7,8 +7,8 @@ import { Images, Strings, Colors } from '../../constants';
 
 export function SignInScreen(props) {
     const [loading, setLoading] = useState(false);
-    const [email, setEmail] = useState('sample@rezidy.com');
-    const [password, setPassword] = useState('password');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
 
     const onPressLogin = async () => {
