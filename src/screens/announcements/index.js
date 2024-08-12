@@ -44,6 +44,7 @@ export function AnnouncementsScreen(props) {
                 renderItem={renderAnnouncement}
                 keyExtractor={item => `${item.id}`}
             />
+
             <Spacer height={20} />
 
             <Modal animationType="fade" transparent={true} visible={!!selectedAnnouncement}>
