@@ -102,8 +102,6 @@ export function UnitsScreen(props) {
                 keyExtractor={item => `${item.id}`}
             />}
 
-            <Button color='red' secondary backIcon text={Strings.buttonBack()} onPress={props.onGoBack} />
-
             <Spacer height={20} />
 
             <Modal animationType="fade" transparent={true} visible={!!selectedUnit}>

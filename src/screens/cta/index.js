@@ -129,8 +129,6 @@ export function CTAScreen(props) {
                 <Button styleName='primary' text={Strings.buttonSubmit()} onPress={onSubmit} />
             </View>
 
-            <Button color='red' secondary backIcon text={Strings.buttonBack()} onPress={props.onGoBack} />
-
             <Spacer height={20} />
 
             <Toast />

@@ -119,8 +119,6 @@ export function UserSettingsScreen(props) {
 
             <Spacer height={20} />
 
-            <Button color='red' secondary backIcon text={Strings.buttonBack()} onPress={props.onGoBack} />
-
             <Spacer height={20} />
 
             <Text style={styles.version}>{versionString}</Text>

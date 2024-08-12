@@ -41,8 +41,6 @@ export function DocumentsScreen(props) {
                 renderItem={renderDoc}
                 keyExtractor={item => `${item.id}`}
             />
-
-            <Button color='red' secondary backIcon text={Strings.buttonBack()} onPress={props.onGoBack} />
         </View>
     );
 }
