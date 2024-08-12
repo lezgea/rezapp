@@ -39,6 +39,8 @@ export default EN_STRINGS = {
     titleMembers: 'Members',
     titleBuildingsAndUnits: 'Buildings and Units',
     titleInvoices: 'Invoices',
+    titleSettings: 'Settings',
+    titleAccounts: 'Accounts',
 
     captionDontHaveAnAccount: 'Don\'t have an account?',
     captionHaveAnAccount: 'Have an account?',

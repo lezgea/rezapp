@@ -39,6 +39,8 @@ export default RU_STRING = {
     titleMembers: 'Участники',
     titleBuildingsAndUnits: 'Здания и блоки',
     titleInvoices: 'Счета',
+    titleSettings: 'Настройки',
+    titleAccounts: 'Аккаунты',
 
     captionDontHaveAnAccount: 'Нет учетной записи?',
     captionHaveAnAccount: 'У вас есть учетная запись?',

@@ -30,21 +30,21 @@ export function UnitsScreen(props) {
         }
 
         const b = getSelectedBuilding();
-        if (b && b.directory===undefined) {
+        if (b && b.directory === undefined) {
             fetchBuildingDirectory(b.url_slug);
         }
     }, [selectedBuildingIndex]);
 
-    const renderBuildingTab = ({item, index}) => {
+    const renderBuildingTab = ({ item, index }) => {
         const bldg = {
             id: item.id,
             name: item.url_slug,
         };
-        const styleName = (index==selectedBuildingIndex) ? 'primary' : 'secondary';
+        const styleName = (index == selectedBuildingIndex) ? 'primary' : 'secondary';
         return (<Tab styleName={styleName} text={bldg.name} onPress={() => setSelectedBuildingIndex(index)} />);
     };
 
-    const renderUnit = ({item, index}) => {
+    const renderUnit = ({ item, index }) => {
         const unit = {
             id: item.id,
             name: item.name,
@@ -77,14 +77,15 @@ export function UnitsScreen(props) {
     const selectedBuilding = getSelectedBuilding();
     const selectedUnit = getSelectedUnit();
 
+    React.useLayoutEffect(() => {
+        if (props.route.params?.title) {
+            props.navigation.setOptions({ title: props.route.params.title });
+        }
+    }, [props.navigation, props.route.params?.title]);
+
+
     return (
         <View style={styles.container}>
-            <Spacer height={20} />
-
-            <Text style={styles.title}>
-                {Strings.titleBuildingsAndUnits()}
-            </Text>
-
             <Spacer height={20} />
 
             <FlatList
@@ -101,8 +102,6 @@ export function UnitsScreen(props) {
                 renderItem={renderUnit}
                 keyExtractor={item => `${item.id}`}
             />}
-
-            <Button color='red' secondary backIcon text={Strings.buttonBack()} onPress={props.onGoBack} />
 
             <Spacer height={20} />
 

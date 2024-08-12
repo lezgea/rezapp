@@ -19,7 +19,7 @@ export function AnnouncementsScreen(props) {
         fetchAnnouncements();
     }, []);
 
-    const renderAnnouncement = ({item}) => {
+    const renderAnnouncement = ({ item }) => {
         const ann = {
             id: item.id,
             name: item.subject,
@@ -29,14 +29,16 @@ export function AnnouncementsScreen(props) {
 
     const announcementDate = dayjs(selectedAnnouncement?.inserted_at).format('ddd, MM/DD/YYYY, hh:mm a');
 
+
+    React.useLayoutEffect(() => {
+        if (props.route.params?.title) {
+            props.navigation.setOptions({ title: props.route.params.title });
+        }
+    }, [props.navigation, props.route.params?.title]);
+
+
     return (
         <View style={styles.container}>
-            <Spacer height={20} />
-
-            <Text style={styles.title}>
-                {Strings.titleAnnouncements()}
-            </Text>
-
             <Spacer height={20} />
 
             <FlatList
@@ -44,8 +46,6 @@ export function AnnouncementsScreen(props) {
                 renderItem={renderAnnouncement}
                 keyExtractor={item => `${item.id}`}
             />
-
-            <Button color='red' secondary backIcon text={Strings.buttonBack()} onPress={props.onGoBack} />
 
             <Spacer height={20} />
 

@@ -41,6 +41,8 @@ export const Strings = {
     titleMembers: () => t('titleMembers'),
     titleBuildingsAndUnits: () => t('titleBuildingsAndUnits'),
     titleInvoices: () => t('titleInvoices'),
+    titleSettings: () => t('titleSettings'),
+    titleAccounts: () => t('titleAccounts'),
 
     captionDontHaveAnAccount: () => t('captionDontHaveAnAccount'),
     captionHaveAnAccount: () => t('captionHaveAnAccount'),

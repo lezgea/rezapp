@@ -39,6 +39,8 @@ export default ES_STRINGS = {
     titleMembers: 'Miembros',
     titleBuildingsAndUnits: 'Edificios y unidades',
     titleInvoices: 'Facturas',
+    titleSettings: 'Configuración',
+    titleAccounts: 'Cuentas',
 
     captionDontHaveAnAccount: '¿No tienes una cuenta?',
     captionHaveAnAccount: '¿Tienes una cuenta?',

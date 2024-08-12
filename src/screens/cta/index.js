@@ -9,12 +9,9 @@ import { rezSaveCTA, rezUploadImageViaForm } from '../../../api_client';
 
 export function CTAScreen(props) {
     const ctaType = props.type;
-    const title = ctaType=='work_request'
-            ? Strings.titleHandymanRequestForm()
-            : Strings.titleComplaintSuggestionForm();
-    const placeholder = ctaType=='work_request'
-            ? Strings.placeholderDescribeProblem()
-            : Strings.placeholderDescribeConcern();
+    const placeholder = ctaType == 'work_request'
+        ? Strings.placeholderDescribeProblem()
+        : Strings.placeholderDescribeConcern();
 
     const [description, setDescription] = useState('');
     const [images, setImages] = useState([]);
@@ -49,9 +46,9 @@ export function CTAScreen(props) {
         setImages([...images, image]);
     };
 
-    const renderImage = ({item, index}) => {
+    const renderImage = ({ item, index }) => {
         return (<View>
-            <ImageBackground source={{uri:item.uri}} style={styles.image}>
+            <ImageBackground source={{ uri: item.uri }} style={styles.image}>
                 <Text style={styles.deleteButton} onPress={() => removeImage(index)}>{'X'}</Text>
             </ImageBackground>
         </View>);
@@ -64,7 +61,7 @@ export function CTAScreen(props) {
     };
 
     const onSubmit = async () => {
-        if (description.trim().length===0 && images.length===0) {
+        if (description.trim().length === 0 && images.length === 0) {
             alert(Strings.errorNeedCTAInput());
             return;
         }
@@ -84,19 +81,21 @@ export function CTAScreen(props) {
                 type: 'info',
                 text1: Strings.messageFormSubmissionSuccessful(),
                 visibilityTime: 1500,
-                onHide: props.onGoBack, 
+                onHide: props.onGoBack,
             });
         }
     };
 
+
+    React.useLayoutEffect(() => {
+        if (props.route.params?.title) {
+            props.navigation.setOptions({ title: props.route.params.title });
+        }
+    }, [props.navigation, props.route.params?.title]);
+
+
     return (
         <View style={styles.container}>
-            <Spacer height={20} />
-
-            <Text style={styles.title}>
-                {title}
-            </Text>
-
             <Spacer height={20} />
 
             <View style={styles.flexed}>
@@ -113,7 +112,7 @@ export function CTAScreen(props) {
 
                 <Button secondary text={Strings.buttonAddImageFromGallery()} onPress={onOpenPhotos} />
 
-                {images.length>0 && <Spacer height={20} />}
+                {images.length > 0 && <Spacer height={20} />}
 
                 <View>
                     <FlatList
@@ -128,8 +127,6 @@ export function CTAScreen(props) {
 
                 <Button styleName='primary' text={Strings.buttonSubmit()} onPress={onSubmit} />
             </View>
-
-            <Button color='red' secondary backIcon text={Strings.buttonBack()} onPress={props.onGoBack} />
 
             <Spacer height={20} />
 

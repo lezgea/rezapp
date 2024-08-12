@@ -21,7 +21,7 @@ export function MembersScreen(props) {
     useEffect(() => {
         async function fetchMemberUnitAssignments(id) {
             const unit_assignments = await rezGetMemberUnitAssignments(id);
-            
+
             const newMembers = JSON.parse(JSON.stringify(members));
             newMembers[selectedMemberIndex].unit_assignments = unit_assignments;
             setMembers(newMembers);
@@ -33,7 +33,7 @@ export function MembersScreen(props) {
         }
     }, [selectedMemberIndex]);
 
-    const renderMember = ({item, index}) => {
+    const renderMember = ({ item, index }) => {
         const mem = {
             id: item.id,
             name: `${item.last_name}, ${item.first_name}`,
@@ -49,14 +49,16 @@ export function MembersScreen(props) {
 
     const selectedMember = getSelectedMember();
 
+
+    React.useLayoutEffect(() => {
+        if (props.route.params?.title) {
+            props.navigation.setOptions({ title: props.route.params.title });
+        }
+    }, [props.navigation, props.route.params?.title]);
+
+
     return (
         <View style={styles.container}>
-            <Spacer height={20} />
-
-            <Text style={styles.title}>
-                {Strings.titleMembers()}
-            </Text>
-
             <Spacer height={20} />
 
             <FlatList
@@ -64,8 +66,6 @@ export function MembersScreen(props) {
                 renderItem={renderMember}
                 keyExtractor={item => `${item.id}`}
             />
-
-            <Button color='red' secondary backIcon text={Strings.buttonBack()} onPress={props.onGoBack} />
 
             <Spacer height={20} />
 
