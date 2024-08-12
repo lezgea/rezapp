@@ -4,6 +4,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { rezGetMemberships, rezGetUserDetails, rezSelectAccountContext, rezUnloadToken } from '../../../api_client';
 import { ListItem, Spacer, Button } from '@/components';
 import { Strings, Sizes, Colors } from '@/constants';
+import { useFocusEffect } from '@react-navigation/native';
 
 
 export function AccountSelectionScreen(props) {
@@ -36,19 +37,21 @@ export function AccountSelectionScreen(props) {
     }
 
 
-    React.useEffect(() => {
-        async function fetchUserDetails() {
-            const user = await rezGetUserDetails();
-            setUserName(user.first_name)
-        }
-        async function fetchMemberships() {
-            const memberships = await rezGetMemberships();
-            setAccounts(memberships);
-        }
-
-        fetchUserDetails()
-        fetchMemberships();
-    }, []);
+    useFocusEffect(
+        React.useCallback(() => {
+            props.navigation.setOptions({ title: Strings.titleAccounts() });
+            async function fetchUserDetails() {
+                const user = await rezGetUserDetails();
+                setUserName(user.first_name);
+            }
+            async function fetchMemberships() {
+                const memberships = await rezGetMemberships();
+                setAccounts(memberships);
+            }
+            fetchUserDetails();
+            fetchMemberships();
+        }, [])
+    );
 
 
     return (
