@@ -32,14 +32,16 @@ export function InvoicesScreen(props) {
 
     const selectedInvoice = selectedInvoiceIndex === null ? null : invoices[selectedInvoiceIndex];
 
+
+    React.useLayoutEffect(() => {
+        if (props.route.params?.title) {
+            props.navigation.setOptions({ title: props.route.params.title });
+        }
+    }, [props.navigation, props.route.params?.title]);
+
+
     return (
         <View style={styles.container}>
-            <Spacer height={20} />
-
-            <Text style={styles.title}>
-                {Strings.titleInvoices()}
-            </Text>
-
             <Spacer height={20} />
 
             <FlatList

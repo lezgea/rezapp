@@ -8,19 +8,19 @@ export function PortalScreen(props) {
     const actions = [
         {
             text: Strings.actionViewAnnouncements(),
-            action: () => props.navigation.navigate('Announcements'),
+            action: () => props.navigation.navigate('Announcements', { title: Strings.titleAnnouncements() }),
         },
         {
             text: Strings.actionRequestHandyman(),
-            action: () => props.navigation.navigate('CTA'),
+            action: () => props.navigation.navigate('CTA', { title: Strings.titleHandymanRequestForm() }),
         },
         {
             text: Strings.actionFileComplaint(),
-            action: () => props.navigation.navigate('CTA'),
+            action: () => props.navigation.navigate('CTA', { title: Strings.titleComplaintSuggestionForm() }),
         },
         {
             text: Strings.actionViewOrPayInvoices(),
-            action: () => props.navigation.navigate('Invoices'),
+            action: () => props.navigation.navigate('Invoices', { title: Strings.titleInvoices() }),
         },
         {
             text: Strings.actionDiscussWithCommunity(),
@@ -28,15 +28,15 @@ export function PortalScreen(props) {
         },
         {
             text: Strings.actionViewDocuments(),
-            action: () => props.navigation.navigate('Documents'),
+            action: () => props.navigation.navigate('Documents', { title: Strings.titleDocumentsAndForms() }),
         },
         {
             text: Strings.actionViewMembers(),
-            action: () => props.navigation.navigate('Members'),
+            action: () => props.navigation.navigate('Members', { title: Strings.titleMembers() }),
         },
         {
             text: Strings.actionViewBuildingsAndUnits(),
-            action: () => props.navigation.navigate('Units'),
+            action: () => props.navigation.navigate('Units', { title: Strings.titleBuildingsAndUnits() }),
         },
     ];
 
@@ -44,11 +44,6 @@ export function PortalScreen(props) {
         const styleName = !!item.action ? 'secondary' : 'disabled';
         return (<ListItem styleName={styleName} forwardIcon text={item.text} onPress={item.action} />);
     }
-
-
-    React.useEffect(() => {
-        props.navigation.setOptions({ title: props.route.params?.title })
-    }, [])
 
 
     return (

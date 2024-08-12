@@ -51,6 +51,14 @@ export function UserSettingsScreen(props) {
 
     const versionString = Strings.captionAppVersion().replace('%s', getAppVersion())
 
+
+    React.useLayoutEffect(() => {
+        if (props.route.params?.title) {
+            props.navigation.setOptions({ title: props.route.params.title });
+        }
+    }, [props.navigation, props.route.params?.title]);
+
+
     return (
         <View style={styles.container}>
             <Spacer height={20} />

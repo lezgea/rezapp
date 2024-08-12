@@ -77,14 +77,15 @@ export function UnitsScreen(props) {
     const selectedBuilding = getSelectedBuilding();
     const selectedUnit = getSelectedUnit();
 
+    React.useLayoutEffect(() => {
+        if (props.route.params?.title) {
+            props.navigation.setOptions({ title: props.route.params.title });
+        }
+    }, [props.navigation, props.route.params?.title]);
+
+
     return (
         <View style={styles.container}>
-            <Spacer height={20} />
-
-            <Text style={styles.title}>
-                {Strings.titleBuildingsAndUnits()}
-            </Text>
-
             <Spacer height={20} />
 
             <FlatList

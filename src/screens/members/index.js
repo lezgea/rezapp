@@ -49,14 +49,16 @@ export function MembersScreen(props) {
 
     const selectedMember = getSelectedMember();
 
+
+    React.useLayoutEffect(() => {
+        if (props.route.params?.title) {
+            props.navigation.setOptions({ title: props.route.params.title });
+        }
+    }, [props.navigation, props.route.params?.title]);
+
+
     return (
         <View style={styles.container}>
-            <Spacer height={20} />
-
-            <Text style={styles.title}>
-                {Strings.titleMembers()}
-            </Text>
-
             <Spacer height={20} />
 
             <FlatList

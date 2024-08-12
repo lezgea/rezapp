@@ -24,7 +24,8 @@ export function SignInScreen(props) {
 
     const onPressSignUp = () => {
         props.navigation.navigate('Register')
-    }
+
+    };
 
 
     return (

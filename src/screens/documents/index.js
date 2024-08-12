@@ -26,14 +26,16 @@ export function DocumentsScreen(props) {
         return (<ListItem styleName='secondary' text={doc.name} onPress={() => openDoc(doc.url)} />);
     };
 
+
+    React.useLayoutEffect(() => {
+        if (props.route.params?.title) {
+            props.navigation.setOptions({ title: props.route.params.title });
+        }
+    }, [props.navigation, props.route.params?.title]);
+
+
     return (
         <View style={styles.container}>
-            <Spacer height={20} />
-
-            <Text style={styles.title}>
-                {Strings.titleDocumentsAndForms()}
-            </Text>
-
             <Spacer height={20} />
 
             <FlatList

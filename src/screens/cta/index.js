@@ -9,9 +9,6 @@ import { rezSaveCTA, rezUploadImageViaForm } from '../../../api_client';
 
 export function CTAScreen(props) {
     const ctaType = props.type;
-    const title = ctaType == 'work_request'
-        ? Strings.titleHandymanRequestForm()
-        : Strings.titleComplaintSuggestionForm();
     const placeholder = ctaType == 'work_request'
         ? Strings.placeholderDescribeProblem()
         : Strings.placeholderDescribeConcern();
@@ -89,14 +86,16 @@ export function CTAScreen(props) {
         }
     };
 
+
+    React.useLayoutEffect(() => {
+        if (props.route.params?.title) {
+            props.navigation.setOptions({ title: props.route.params.title });
+        }
+    }, [props.navigation, props.route.params?.title]);
+
+
     return (
         <View style={styles.container}>
-            <Spacer height={20} />
-
-            <Text style={styles.title}>
-                {title}
-            </Text>
-
             <Spacer height={20} />
 
             <View style={styles.flexed}>

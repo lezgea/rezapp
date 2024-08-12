@@ -29,14 +29,16 @@ export function AnnouncementsScreen(props) {
 
     const announcementDate = dayjs(selectedAnnouncement?.inserted_at).format('ddd, MM/DD/YYYY, hh:mm a');
 
+
+    React.useLayoutEffect(() => {
+        if (props.route.params?.title) {
+            props.navigation.setOptions({ title: props.route.params.title });
+        }
+    }, [props.navigation, props.route.params?.title]);
+
+
     return (
         <View style={styles.container}>
-            <Spacer height={20} />
-
-            <Text style={styles.title}>
-                {Strings.titleAnnouncements()}
-            </Text>
-
             <Spacer height={20} />
 
             <FlatList
