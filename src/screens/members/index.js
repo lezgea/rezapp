@@ -21,7 +21,7 @@ export function MembersScreen(props) {
     useEffect(() => {
         async function fetchMemberUnitAssignments(id) {
             const unit_assignments = await rezGetMemberUnitAssignments(id);
-            
+
             const newMembers = JSON.parse(JSON.stringify(members));
             newMembers[selectedMemberIndex].unit_assignments = unit_assignments;
             setMembers(newMembers);
@@ -33,7 +33,7 @@ export function MembersScreen(props) {
         }
     }, [selectedMemberIndex]);
 
-    const renderMember = ({item, index}) => {
+    const renderMember = ({ item, index }) => {
         const mem = {
             id: item.id,
             name: `${item.last_name}, ${item.first_name}`,
@@ -64,8 +64,6 @@ export function MembersScreen(props) {
                 renderItem={renderMember}
                 keyExtractor={item => `${item.id}`}
             />
-
-            <Button color='red' secondary backIcon text={Strings.buttonBack()} onPress={props.onGoBack} />
 
             <Spacer height={20} />
 

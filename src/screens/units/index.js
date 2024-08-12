@@ -30,21 +30,21 @@ export function UnitsScreen(props) {
         }
 
         const b = getSelectedBuilding();
-        if (b && b.directory===undefined) {
+        if (b && b.directory === undefined) {
             fetchBuildingDirectory(b.url_slug);
         }
     }, [selectedBuildingIndex]);
 
-    const renderBuildingTab = ({item, index}) => {
+    const renderBuildingTab = ({ item, index }) => {
         const bldg = {
             id: item.id,
             name: item.url_slug,
         };
-        const styleName = (index==selectedBuildingIndex) ? 'primary' : 'secondary';
+        const styleName = (index == selectedBuildingIndex) ? 'primary' : 'secondary';
         return (<Tab styleName={styleName} text={bldg.name} onPress={() => setSelectedBuildingIndex(index)} />);
     };
 
-    const renderUnit = ({item, index}) => {
+    const renderUnit = ({ item, index }) => {
         const unit = {
             id: item.id,
             name: item.name,
@@ -101,8 +101,6 @@ export function UnitsScreen(props) {
                 renderItem={renderUnit}
                 keyExtractor={item => `${item.id}`}
             />}
-
-            <Button color='red' secondary backIcon text={Strings.buttonBack()} onPress={props.onGoBack} />
 
             <Spacer height={20} />
 

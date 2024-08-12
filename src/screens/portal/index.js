@@ -68,8 +68,6 @@ export function PortalScreen(props) {
                 style={s.list}
             />
 
-            {/*<Button color='red' secondary backIcon text={Strings.buttonBack()} onPress={props.onGoBack} />*/}
-
             <Spacer height={20} />
         </View>
     );

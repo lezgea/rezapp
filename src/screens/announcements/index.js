@@ -19,7 +19,7 @@ export function AnnouncementsScreen(props) {
         fetchAnnouncements();
     }, []);
 
-    const renderAnnouncement = ({item}) => {
+    const renderAnnouncement = ({ item }) => {
         const ann = {
             id: item.id,
             name: item.subject,
@@ -44,9 +44,6 @@ export function AnnouncementsScreen(props) {
                 renderItem={renderAnnouncement}
                 keyExtractor={item => `${item.id}`}
             />
-
-            <Button color='red' secondary backIcon text={Strings.buttonBack()} onPress={props.onGoBack} />
-
             <Spacer height={20} />
 
             <Modal animationType="fade" transparent={true} visible={!!selectedAnnouncement}>

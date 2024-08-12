@@ -21,7 +21,7 @@ export function DocumentsScreen(props) {
         await Linking.openURL(url);
     }
 
-    const renderDoc = ({item, index}) => {
+    const renderDoc = ({ item, index }) => {
         const doc = item;
         return (<ListItem styleName='secondary' text={doc.name} onPress={() => openDoc(doc.url)} />);
     };
@@ -42,7 +42,6 @@ export function DocumentsScreen(props) {
                 keyExtractor={item => `${item.id}`}
             />
 
-            <Button color='red' secondary backIcon text={Strings.buttonBack()} onPress={props.onGoBack} />
         </View>
     );
 }
