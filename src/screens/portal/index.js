@@ -46,14 +46,15 @@ export function PortalScreen(props) {
     }
 
 
+    React.useLayoutEffect(() => {
+        if (props.route.params?.title) {
+            props.navigation.setOptions({ title: props.route.params.title });
+        }
+    }, [props.navigation, props.route.params?.title]);
+
+
     return (
         <View style={s.container}>
-            <Spacer height={20} />
-
-            <Text style={s.title}>
-                {props.account?.name}
-            </Text>
-
             <Spacer height={20} />
 
             <FlatList

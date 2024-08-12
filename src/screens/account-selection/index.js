@@ -64,7 +64,7 @@ export function AccountSelectionScreen(props) {
                     name={"settings"}
                     size={Sizes.iconSize}
                     color={Colors.blue}
-                    onPress={() => props.navigation.navigate('Settings')}
+                    onPress={() => props.navigation.navigate('Settings', { title: Strings.titleSettings() })}
                 />
             </View>
 
