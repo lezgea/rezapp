@@ -11,7 +11,7 @@ export const Colors = {
     black: gray('00'),
     lightGray: gray('e0'),
     darkGray: gray('16'),
-    midGray: gray('80'),
+    midGray: gray('b9'),
 
     blue: '#00A2ff',
     green: '#2bc221',
