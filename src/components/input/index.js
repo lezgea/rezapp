@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, TextInput, StyleSheet, FlatList } from "react-native";
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {Colors, Sizes} from "../../constants";
+import { Colors, Sizes } from "../../constants";
 
 
 export const Input = (props) => {
@@ -10,13 +10,13 @@ export const Input = (props) => {
     const [showSuggs, setShowSuggs] = useState(false);
 
     const setFocusState = (flag) => {
-        setTimeout(function() {
+        setTimeout(function () {
             setFocused(flag);
             setShowSuggs(flag);
         }, 1000);
     };
 
-    const hasSuggs = props.suggestions && props.suggestions.length>0;
+    const hasSuggs = props.suggestions && props.suggestions.length > 0;
     return (
         <View style={[styles.wrapper, props.wrapperStyle]}>
             {/* <Regular>
@@ -37,7 +37,7 @@ export const Input = (props) => {
                 />
                 <View style={styles.input}>
                     <TextInput
-                        style={props.value.length===0 ? styles.placeholder : styles.text}
+                        style={props.value.length === 0 ? styles.placeholder : styles.text}
                         onFocus={() => setFocusState(true)}
                         onBlur={() => setFocusState(false)}
                         {...props}
@@ -80,11 +80,11 @@ const styles = StyleSheet.create({
     container: {
         minHeight: 55,
         borderRadius: 12,
-        borderWidth: 1,
+        borderWidth: 2,
         paddingHorizontal: 15,
         flexDirection: "row",
         alignItems: "center",
-        borderColor: Colors.grey,
+        borderColor: Colors.midGray,
     },
     focused: {
         shadowColor: Colors.blue,
@@ -107,10 +107,10 @@ const styles = StyleSheet.create({
 
     input: {
         flex: 1,
-        paddingLeft: 15,
+        paddingLeft: 5,
     },
     placeholder: {
-        fontSize: 11,
+        fontSize: 14,
         fontStyle: "italic",
         lineHeight: 20,
         color: Colors.midGray,

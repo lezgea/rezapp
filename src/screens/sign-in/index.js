@@ -31,24 +31,15 @@ export function SignInScreen(props) {
     return (
         <View style={s.container}>
             <Image source={Images.logo} style={s.logo} />
-
-            <Spacer height={20} />
-
-            <Input placeholder={Strings.placeholderEmailAddress()} textContentType='emailAddress' autoCapitalize='none' value={email} onChangeText={setEmail} />
-
-            <Spacer height={20} />
-
-            <Input placeholder={Strings.placeholderPassword()} textContentType='password' autoCapitalize='none' secureTextEntry value={password} onChangeText={setPassword} />
-
-            <Spacer height={20} />
-
-            <Button text={Strings.buttonLogIn()} onPress={onPressLogin} />
-
-            <Spacer height={100} />
-
-            <Text style={s.caption}>{Strings.captionDontHaveAnAccount()}</Text>
-
-            <Button text={Strings.buttonRegister()} secondary disabled={loading} onPress={onPressSignUp} />
+            <View style={s.inputGroup}>
+                <Input placeholder={Strings.placeholderEmailAddress()} textContentType='emailAddress' autoCapitalize='none' value={email} onChangeText={setEmail} />
+                <Input placeholder={Strings.placeholderPassword()} textContentType='password' autoCapitalize='none' secureTextEntry value={password} onChangeText={setPassword} />
+                <Button text={Strings.buttonLogIn()} onPress={onPressLogin} />
+            </View>
+            <View style={s.footer}>
+                <Text style={s.caption}>{Strings.captionDontHaveAnAccount()}</Text>
+                <Button text={Strings.buttonRegister()} secondary disabled={loading} onPress={onPressSignUp} />
+            </View>
         </View>
     );
 }
@@ -57,20 +48,28 @@ const s = StyleSheet.create({
     container: {
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
+        justifyContent: 'space-between',
         alignSelf: 'stretch',
-        paddingHorizontal: 60,
+        paddingHorizontal: 40,
+        paddingTop: 150,
+        paddingBottom: 70,
         height: '100%',
+        backgroundColor: '#fff',
     },
     logo: {
         width: 200,
         height: 200,
+        objectFit: 'contain',
         alignSelf: 'center',
-        borderRadius: 12,
     },
     caption: {
         textAlign: 'center',
-        color: Colors.midGray,
-        marginBottom: 5,
+        color: Colors.darkGray,
     },
+    inputGroup: {
+        gap: 20,
+    },
+    footer: {
+        gap: 20,
+    }
 });
