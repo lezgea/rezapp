@@ -44,12 +44,10 @@ export function SignInScreen(props) {
     );
 }
 
+
 const s = StyleSheet.create({
     container: {
-        display: 'flex',
-        flexDirection: 'column',
         justifyContent: 'space-between',
-        alignSelf: 'stretch',
         paddingHorizontal: 40,
         paddingTop: 150,
         paddingBottom: 70,
@@ -63,6 +61,7 @@ const s = StyleSheet.create({
         alignSelf: 'center',
     },
     caption: {
+        fontSize: 16,
         textAlign: 'center',
         color: Colors.darkGray,
     },

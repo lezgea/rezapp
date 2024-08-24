@@ -1,12 +1,12 @@
 import React from "react";
 import { TouchableOpacity, StyleSheet, Text } from "react-native";
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {Colors, Sizes} from "../../constants";
+import { Colors, Sizes } from "../../constants";
 
 export const Button = (props) => {
     const color = props.disabled ? 'disabled' : (props.color || 'blue');
     const prisec = props.secondary ? 'Secondary' : 'Primary';
-    const buttonStyle = styles[color+prisec+'Button'];
+    const buttonStyle = styles[color + prisec + 'Button'];
 
     return (
         <TouchableOpacity style={[styles.button, buttonStyle]} {...props}>
@@ -15,7 +15,7 @@ export const Button = (props) => {
                 size={Sizes.iconSize}
                 color={props.backIcon ? buttonStyle.color : 'transparent'}
             />
-            <Text style={[styles.text, {color:buttonStyle.color}]}>
+            <Text style={[styles.text, { color: buttonStyle.color }]}>
                 {props.text}
             </Text>
             <Ionicons
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     // text
     text: {
         textAlign: "center",
-        fontSize: 15,
-        flex: 1,
+        fontSize: 18,
+        fontWeight: '500',
     },
 });

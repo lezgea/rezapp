@@ -41,60 +41,47 @@ export function SignUpScreen(props) {
     return (
         <View style={s.container}>
             <Image source={Images.logo} style={s.logo} />
-
-            <Spacer height={20} />
-
-            <Input placeholder={Strings.placeholderFirstName()} autoCapitalize='characters' value={firstName} onChangeText={setFirstName} />
-
-            <Spacer height={20} />
-
-            <Input placeholder={Strings.placeholderLastName()} autoCapitalize='characters' value={lastName} onChangeText={setLastName} />
-
-            <Spacer height={20} />
-
-            <Input placeholder={Strings.placeholderPhoneNumber()} keyboardType='phone-pad' value={phone} onChangeText={setPhone} />
-
-            <Spacer height={20} />
-
-            <Input placeholder={Strings.placeholderEmailAddress()} autoCapitalize='none' value={email} onChangeText={setEmail} />
-
-            <Spacer height={20} />
-
-            <Input placeholder={Strings.placeholderPassword()} autoCapitalize='none' secureTextEntry value={password} onChangeText={setPassword} />
-
-            <Spacer height={20} />
-
-            <Button text={Strings.buttonRegister()} onPress={onPressRegister} />
-
-            <Spacer height={100} />
-
-            <Text style={s.caption}>{Strings.captionHaveAnAccount()}</Text>
-
-            <Button text={Strings.buttonLogIn()} secondary disabled={loading} onPress={onPressLogin} />
+            <View style={s.inputGroup}>
+                <Input placeholder={Strings.placeholderFirstName()} autoCapitalize='characters' value={firstName} onChangeText={setFirstName} />
+                <Input placeholder={Strings.placeholderLastName()} autoCapitalize='characters' value={lastName} onChangeText={setLastName} />
+                <Input placeholder={Strings.placeholderPhoneNumber()} keyboardType='phone-pad' value={phone} onChangeText={setPhone} />
+                <Input placeholder={Strings.placeholderEmailAddress()} autoCapitalize='none' value={email} onChangeText={setEmail} />
+                <Input placeholder={Strings.placeholderPassword()} autoCapitalize='none' secureTextEntry value={password} onChangeText={setPassword} />
+                <Button text={Strings.buttonRegister()} onPress={onPressRegister} />
+            </View>
+            <View style={s.footer}>
+                <Text style={s.caption}>{Strings.captionHaveAnAccount()}</Text>
+                <Button text={Strings.buttonLogIn()} secondary disabled={loading} onPress={onPressLogin} />
+            </View>
         </View>
     );
 }
 
 
-
 const s = StyleSheet.create({
     container: {
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignSelf: 'stretch',
-        paddingHorizontal: 60,
+        justifyContent: 'space-between',
+        paddingHorizontal: 40,
+        paddingTop: 90,
+        paddingBottom: 70,
         height: '100%',
+        backgroundColor: '#fff',
     },
     logo: {
-        width: 100,
-        height: 100,
+        width: 130,
+        height: 130,
+        objectFit: 'contain',
         alignSelf: 'center',
-        borderRadius: 12,
     },
     caption: {
+        fontSize: 16,
         textAlign: 'center',
-        color: Colors.midGray,
-        marginBottom: 5,
+        color: Colors.darkGray,
     },
+    inputGroup: {
+        gap: 20,
+    },
+    footer: {
+        gap: 20,
+    }
 });

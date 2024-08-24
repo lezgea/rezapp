@@ -110,14 +110,16 @@ const styles = StyleSheet.create({
         paddingLeft: 5,
     },
     placeholder: {
-        fontSize: 14,
+        top: 2,
+        fontSize: 17,
+        lineHeight: 18,
         fontStyle: "italic",
-        lineHeight: 20,
         color: Colors.midGray,
     },
     text: {
-        fontSize: 13,
-        lineHeight: 15,
+        top: 2,
+        fontSize: 17,
+        lineHeight: 18,
         color: Colors.textColor,
     },
     topText: {
