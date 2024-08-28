@@ -16,6 +16,7 @@ import {
     CTAScreen,
     UserSettingsScreen,
     InvoicesScreen,
+    SplashScreen,
 } from './src/screens';
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { rezUnloadToken } from './api_client';
@@ -179,6 +180,11 @@ export default function App() {
     return (
         <NavigationContainer>
             <Stack.Navigator initialRouteName="Splash">
+                <Stack.Screen
+                    name="Splash"
+                    component={SplashScreen}
+                    options={{ headerShown: false }}
+                />
                 <Stack.Screen
                     name="AuthRoutes"
                     component={AuthRoutes}

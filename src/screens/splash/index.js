@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
-
-
-
-import { Easing, Animated } from 'react-native';
-
+import { Easing, Animated, StyleSheet } from 'react-native';
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import VX from "@/plugins/vx";
 
 
 export function SplashScreen(props) {
@@ -14,17 +12,19 @@ export function SplashScreen(props) {
     }
     );
 
+
+
     const duration = 1200;
 
     async function checkAndNavigate() {
-        // let token = await Cache.getItem('token')
-        // setTimeout(() => {
-        //     if (!!token) {
-        //         props.navigation.replace('NavigationRoutes')
-        //     } else {
-        //         props.navigation.replace('AuthRoutes')
-        //     }
-        // }, 2000);
+        let token = AsyncStorage.getItem('accessToken')
+        setTimeout(() => {
+            if (!!token) {
+                props.navigation.replace('NavigationRoutes')
+            } else {
+                props.navigation.replace('AuthRoutes')
+            }
+        }, 2000);
     }
 
 
@@ -38,7 +38,7 @@ export function SplashScreen(props) {
         } else {
             hideScreen();
         }
-        // checkAndNavigate()
+        checkAndNavigate()
     }, []);
 
 
@@ -70,9 +70,9 @@ export function SplashScreen(props) {
 
 
     return (
-        <Animated.View style={[st.imageContainer, { opacity: state.bgOpacity }]}>
-            {/* <Animated.Image style={[
-                st.image,
+        <Animated.View style={[s.imageContainer, { opacity: state.bgOpacity }]}>
+            <Animated.Image style={[
+                s.image,
                 {
                     transform: [
                         {
@@ -80,12 +80,35 @@ export function SplashScreen(props) {
                         }
                     ]
                 }]}
-                source={require("../../../../assets/img/logo.png")}
-            /> */}
+                source={require("@/assets/logo.png")}
+            />
         </Animated.View>
     )
 }
 
 
-
-
+const s = StyleSheet.create({
+    container: {
+        flex: 1,
+    },
+    imageContainer: {
+        flex: 1,
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        width: '100%',
+        height: '100%',
+        backgroundColor: "#ffffff",
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        alignContent: 'center',
+    },
+    image: {
+        alignSelf: 'center',
+        width: VX.w(250),
+        height: VX.w(250),
+    }
+});

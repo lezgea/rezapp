@@ -6,11 +6,6 @@
     "version": "1.6.7",
     "orientation": "portrait",
     "icon": "./src/assets/logo.png",
-    "splash": {
-      "image": "./src/assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
     "updates": {
       "fallbackToCacheTimeout": 0,
       "url": "https://u.expo.dev/5b64e67d-bfa4-4896-8583-7552b122665f"
